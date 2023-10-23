@@ -28,6 +28,6 @@ $errorHandler->forceContentType('application/json');
 //Initiation de Eloquent
 //On initie les bases de données pour qu'il y ai une connection
 $eloquent = new Eloquent();
-$eloquent->init(__DIR__ . DIRECTORY_SEPARATOR . 'festival.db.ini', 'festival');
+$eloquent->init(__DIR__ . DIRECTORY_SEPARATOR . 'auth.db.ini', 'festival_auth');
 
 return $app;
