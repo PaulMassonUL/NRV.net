@@ -1,0 +1,35 @@
+# Log file - the following switch allows to specify the file that will be
+# used to write all messages from simulation:  -l <filename>
+*.log
+**/cache/
+**.cache
+
+##### VisualStudioCode
+.vscode/
+
+# Local History for Visual Studio Code
+.history/
+
+
+##### JetBrains
+# Covers JetBrains IDEs: IntelliJ, RubyMine, PhpStorm, AppCode, PyCharm, CLion, Android Studio, WebStorm and Rider
+# Reference: https://intellij-support.jetbrains.com/hc/en-us/articles/206544839
+
+# User-specific stuff
+.idea/
+
+
+##### Composer
+**/composer.phar
+**/composer.lock
+**/vendor/
+
+
+##### Project config files
+*.ini
+.env
+
+
+##### draw.io temp files
+*.bkp
+*.dtmp
