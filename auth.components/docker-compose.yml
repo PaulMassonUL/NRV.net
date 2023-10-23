@@ -1,0 +1,50 @@
+version: '3'
+networks:
+  festival-shop.net:
+    driver: bridge
+services:
+
+  # service api.pizza-shop : api pour la prise de commandes
+  #
+  api.festival-shop:
+    image: 'canals/php:latest'
+    env_file: ./shop.env
+    ports:
+      - '2080:80'
+      - '1443:443'
+    volumes:
+      - ../shop.festival/public:/var/www/html
+      - ../shop.festival:/var/www
+    working_dir: /var/www/
+    networks:
+      festival-shop.net:
+        aliases:
+          - api.festival-shop.local
+    depends_on:
+      - festival-shop.commande.db
+
+
+
+  # service sql pour le stockage des commandes -
+  # utilisé par l'api order
+  festival-shop.commande.db:
+    image: 'mariadb:latest'
+    command: '--default-authentication-plugin=mysql_native_password --character-set-server=utf8 --collation-server=utf8_general_ci'
+    env_file: ./shop.env
+    ports:
+      - '3307:3306'
+    networks:
+      - festival-shop.net
+    volumes:
+      - ../shop.festival/sql:/var/sql
+
+  # service administration des bases sql
+  #
+  adminer:
+    image: adminer
+    env_file: ./shop.env
+    ports:
+      - '8080:8080'
+    networks:
+      - festival-shop.net
+

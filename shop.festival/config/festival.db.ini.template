@@ -1,0 +1,8 @@
+connection=festival
+driver=mysql
+username=
+password=
+host=festival-shop.commande.db
+database=festival_shop
+charset=utf8
+collation=utf8_unicode_ci
