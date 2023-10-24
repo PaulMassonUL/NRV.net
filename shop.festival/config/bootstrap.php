@@ -1,34 +1,29 @@
 <?php
 
 use DI\ContainerBuilder;
-use festochshop\shop\domaine\utils\Eloquent;
-use Slim\Factory\AppFactory;
 
-//ajout des dépendances
-$settings = require_once __DIR__ . DIRECTORY_SEPARATOR . 'settings.php';
-$dependancies = require_once __DIR__ . DIRECTORY_SEPARATOR . 'dependancies.php';
-$actions = require_once __DIR__ . DIRECTORY_SEPARATOR . 'actions.php';
+$builder = new ContainerBuilder();
 
-// ajoute les dépendances dans un container builder qui va lui les intégrer à l'app
-$build = new ContainerBuilder();
-$build->addDefinitions($settings);
-$build->addDefinitions($dependancies);
-$build->addDefinitions($actions);
-$container = $build->build();
+$builder->addDefinitions(__DIR__ . '/settings.php');
+$builder->addDefinitions(__DIR__ . '/services_dependencies.php');
+$builder->addDefinitions(__DIR__ . '/actions.php');
 
-//creation de l'app à partir du container
-$app =  AppFactory::createFromContainer($container);
+$c=$builder->build();
 
-//ajout des middleware
-$app->addBodyParsingMiddleware();
+$app = \Slim\Factory\AppFactory::createFromContainer($c);
+
+
 $app->addRoutingMiddleware();
+$app->addBodyParsingMiddleware();
 $errorMiddleware = $app->addErrorMiddleware(true, false, false);
+
 $errorHandler = $errorMiddleware->getDefaultErrorHandler();
 $errorHandler->forceContentType('application/json');
 
-//Initiation de Eloquent
-//On initie les bases de données pour qu'il y ai une connection
-$eloquent = new Eloquent();
-$eloquent->init(__DIR__ . DIRECTORY_SEPARATOR . 'festival.db.ini', $app->getContainer()->get('connection.name.festival'));
+$capsule = new \Illuminate\Database\Capsule\Manager();
+
+$capsule->addConnection(parse_ini_file("festival.db.ini"), 'festival');
+$capsule->setAsGlobal();
+$capsule->bootEloquent();
 
 return $app;
