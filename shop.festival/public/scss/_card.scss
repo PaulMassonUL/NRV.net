@@ -1,0 +1,9 @@
+$bgColorPrimary: #D9D9D9;
+$bgColorSecondary: #BEBEBE;
+
+.card {
+  background-color: $bgColorPrimary;
+  border-radius: 10px;
+  box-shadow: 0px 3px 2px 0px $bgColorSecondary;
+  padding: 5px;
+}
