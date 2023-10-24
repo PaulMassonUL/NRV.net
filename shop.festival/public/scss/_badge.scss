@@ -1,0 +1,21 @@
+$primary-color: #F83A3E;
+
+.badges-list {
+    display: flex;
+    .badge {
+        border: 3px solid $primary-color;
+        border-radius: 40px;
+        display: flex;
+        font-weight: bold;
+        align-items: center;
+        margin: 20px;
+        padding: 0 40px;
+
+        img {
+            width: 24px;
+            height: 24px;
+            margin-right: 10px;
+
+        }
+    }
+}
