@@ -1,0 +1,18 @@
+$bgColorGreen: #21D954;
+$bgColorRed: #F83A3E;
+
+.button-green {
+  border-radius: 10px;
+  border: none;
+  background-color: $bgColorGreen;
+  box-shadow: 0px 2px 10px 0px black;
+  text-align: center;
+  padding: 8px 50px;
+  color: white;
+}
+
+.button-red {
+  @extend .button-green;
+  background-color: $bgColorRed;
+  color: white;
+}
