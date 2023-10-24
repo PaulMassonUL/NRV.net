@@ -13,7 +13,8 @@ class Eloquent
         $this->db = new DB();
     }
 
-    public function init ($fileConfig, $name) {
+    public function init($fileConfig, $name): void
+    {
         $this->db->addConnection(parse_ini_file($fileConfig), $name);
         $this->db->bootEloquent();
         $this->db->setAsGlobal();

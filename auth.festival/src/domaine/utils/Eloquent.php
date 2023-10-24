@@ -1,6 +1,6 @@
 <?php
 
-namespace festochshop\shop\domaine\utils;
+namespace festochshop\auth\domaine\utils;
 
 use Illuminate\Database\Capsule\Manager as DB;
 

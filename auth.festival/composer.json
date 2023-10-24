@@ -18,7 +18,7 @@
   "autoload": {
     "psr-4" : {
       "festochshop\\tests\\": "./tests/",
-      "festochshop\\shop\\" : "./src/"
+      "festochshop\\auth\\" : "./src/"
 
     }
   }
