@@ -1,7 +1,7 @@
--- Adminer 4.8.1 MySQL 5.5.5-10.3.11-MariaDB-1:10.3.11+maria~bionic dump
+-- Adminer 4.8.1 MySQL 5.5.5-10.11.3-MariaDB-1:10.11.3+maria~ubu2204 dump
 
 SET NAMES utf8;
-SET time_zone = '+00:00';
+SET time_zone = '+02:00';
 SET foreign_key_checks = 0;
 SET sql_mode = 'NO_AUTO_VALUE_ON_ZERO';
 
@@ -93,4 +93,4 @@ CREATE TABLE `Ticket`
 ) ENGINE = InnoDB
   DEFAULT CHARSET = utf8;
 
--- 2023-09-06 14:47:17
+-- 2023-10-24 10:12:42
