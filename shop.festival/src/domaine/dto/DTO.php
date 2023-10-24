@@ -1,5 +1,7 @@
 <?php
 
+namespace festochshop\shop\domaine\dto;
+
 abstract class DTO
 {
     public function toJson(): string {
