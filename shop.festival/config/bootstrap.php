@@ -1,6 +1,7 @@
 <?php
 
 use DI\ContainerBuilder;
+use pizzashop\shop\domain\middlewares\Cors;
 
 $builder = new ContainerBuilder();
 
