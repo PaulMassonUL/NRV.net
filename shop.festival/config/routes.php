@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 use festochshop\shop\app\action\GetEveningByIdAction;
 use festochshop\shop\app\action\GetShowsAction;
-use festochshop\shop\app\action\GetShowsFilterByDateAction;
 
 return function (\Slim\App $app) {
 
