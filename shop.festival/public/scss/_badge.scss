@@ -2,6 +2,8 @@ $primary-color: #F83A3E;
 
 .badges-list {
     display: flex;
+    justify-content: center;
+
     .badge {
         border: 3px solid $primary-color;
         border-radius: 40px;
