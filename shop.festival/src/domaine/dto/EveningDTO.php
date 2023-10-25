@@ -11,8 +11,9 @@ class EveningDTO
     public int $price;
     public int $reduced_price;
     public SpotDTO $spot;
+    public array $shows;
 
-    public function __construct (int $id, string $name, string $thematic, string $date, int $price, int $reduced_price, $spot) {
+    public function __construct (int $id, string $name, string $thematic, string $date, int $price, int $reduced_price, $spot, $shows) {
         $this->id = $id;
         $this->name = $name;
         $this->thematic = $thematic;
@@ -20,6 +21,7 @@ class EveningDTO
         $this->price = $price;
         $this->reduced_price = $reduced_price;
         $this->spot = $spot;
+        $this->shows = $shows;
     }
 
 
