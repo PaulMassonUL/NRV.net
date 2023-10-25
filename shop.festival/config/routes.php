@@ -11,5 +11,7 @@ return function (\Slim\App $app) {
 
     $app->get('/evening/{id}[/]', GetEveningByIdAction::class)->setName('getEveningById');
 
+//    $app->get('/evening[/]', GetEveningsAction::class)->setName('getEvenings');
+
 
 };

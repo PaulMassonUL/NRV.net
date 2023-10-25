@@ -1,7 +1,7 @@
 <?php
 
-use festochshop\shop\app\action\GetShowsAction;
 use festochshop\shop\app\action\GetEveningByIdAction;
+use festochshop\shop\app\action\GetShowsAction;
 use Psr\Container\ContainerInterface;
 
 return [
@@ -13,7 +13,5 @@ return [
     GetEveningByIdAction::class => function (ContainerInterface $container){
         return new GetEveningByIdAction($container->get('ServiceEvening'));
     },
-
-
 
 ];

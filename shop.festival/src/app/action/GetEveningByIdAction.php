@@ -21,7 +21,7 @@ class GetEveningByIdAction extends Action
     public function __invoke(Request $rq, Response $rs, array $args): Response
     {
         try {
-            $show = $this->serviceEvening->getEvening($args['id']);
+            $show = $this->serviceEvening->getEveningById($args['id']);
 
             $data = [
                 'type' => 'resource',
