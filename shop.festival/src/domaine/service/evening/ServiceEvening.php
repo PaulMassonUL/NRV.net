@@ -33,7 +33,7 @@ class ServiceEvening implements iServiceEvening
         return $eveningDTO;
     }
 
-    public function getAllThematic(): array
+    public function getAllThematics(): array
     {
         $thematics = Evening::select('thematic')->distinct()->get();
         $thematicsDTO = [];
@@ -41,6 +41,16 @@ class ServiceEvening implements iServiceEvening
             $thematicsDTO[] = $thematic->thematic;
         }
         return $thematicsDTO;
+    }
+
+    public function getAllDates(): array
+    {
+        $dates = Evening::select('date')->distinct()->get();
+        $datesDTO = [];
+        foreach ($dates as $date) {
+            $datesDTO[] = $date->date;
+        }
+        return $datesDTO;
     }
 
 }

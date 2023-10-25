@@ -16,4 +16,8 @@ return [
         return new \festochshop\shop\domaine\service\evening\ServiceEvening($container->get('logger'));
     },
 
+    'ServiceSpot' => function (\Psr\Container\ContainerInterface $container) {
+        return new \festochshop\shop\domaine\service\spot\ServiceSpot($container->get('logger'));
+    },
+
 ];

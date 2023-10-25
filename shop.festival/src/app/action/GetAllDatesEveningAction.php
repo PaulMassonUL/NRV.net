@@ -8,7 +8,7 @@ use Psr\Http\Message\ResponseInterface as Response;
 use Psr\Http\Message\ServerRequestInterface as Request;
 
 
-class GetAllThematicAction extends Action
+class GetAllDatesEveningAction extends Action
 {
 
     private iServiceEvening $serviceEvening;
@@ -21,11 +21,11 @@ class GetAllThematicAction extends Action
     public function __invoke(Request $rq, Response $rs, array $args): Response
     {
         try {
-            $thematics = $this->serviceEvening->getAllThematics();
+            $dates = $this->serviceEvening->getAllDates();
 
             $data = [
                 'type' => 'resource',
-                'thematics' => $thematics,
+                'dates' => $dates,
             ];
 
             $rs->getBody()->write(json_encode($data));
