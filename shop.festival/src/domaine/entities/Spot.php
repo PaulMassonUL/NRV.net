@@ -10,6 +10,13 @@ class Spot extends \Illuminate\Database\Eloquent\Model
     protected $table = 'Spot';
     protected $primaryKey = 'id';
 
+    protected $fillable = [
+        'name',
+        'address',
+        'nb_standing',
+        'nb_seated',
+    ];
+
     public function images () {
         return $this->hasMany(SpotImage::class, 'spot_id');
     }

@@ -10,6 +10,13 @@ class Ticket extends Model
     protected $table = 'Ticket';
     protected $primaryKey = 'id';
 
+    protected $fillable = [
+        'price',
+        'quantity',
+        'evening_id',
+        'user_id'
+    ];
+
     public function toDTO() {
 
     }

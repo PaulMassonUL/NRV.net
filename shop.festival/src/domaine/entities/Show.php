@@ -10,6 +10,14 @@ class Show extends \Illuminate\Database\Eloquent\Model
     protected $table = 'Show';
     protected $primaryKey = 'id';
 
+    protected $fillable = [
+        'title',
+        'description',
+        'time',
+        'video',
+        'evening_id',
+    ];
+
     public function evening()
     {
         return $this->belongsTo(Evening::class, 'evening_id');

@@ -11,6 +11,15 @@ class Evening extends \Illuminate\Database\Eloquent\Model
     protected $primaryKey = 'id';
     public $timestamps = false;
 
+    protected $fillable = [
+        'name',
+        'thematic',
+        'date',
+        'price',
+        'reduced_price',
+        'spot_id',
+    ];
+
     public function shows()
     {
         return $this->hasMany(Show::class, 'evening_id');
@@ -18,6 +27,11 @@ class Evening extends \Illuminate\Database\Eloquent\Model
 
     public function spot(){
         return $this->belongsTo(Spot::class, 'spot_id');
+    }
+
+    public function tickets()
+    {
+        return $this->hasMany(Ticket::class, 'evening_id');
     }
 
     public function toDTO(): EveningDTO

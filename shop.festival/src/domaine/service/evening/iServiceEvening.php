@@ -13,5 +13,7 @@ interface iServiceEvening
 
     public function getAllDates(): array;
 
+    public function getPlaceByEvening(int $id): array;
+
 }
 
