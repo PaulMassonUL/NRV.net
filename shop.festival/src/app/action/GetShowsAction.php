@@ -23,8 +23,8 @@ class GetShowsAction extends Action
         try {
             if (isset($rq->getQueryParams()['date'])) {
                 $shows = $this->serviceShow->getShowsByDate($rq->getQueryParams()['date']);
-            } elseif (isset($rq->getQueryParams()['lieu'])) {
-                $shows = $this->serviceShow->getShowsBySpot($rq->getQueryParams()['lieu']);
+            } elseif (isset($rq->getQueryParams()['spot'])) {
+                $shows = $this->serviceShow->getShowsBySpot($rq->getQueryParams()['spot']);
             } elseif (isset($rq->getQueryParams()['thematic'])) {
                 $shows = $this->serviceShow->getShowsByThematic($rq->getQueryParams()['thematic']);
             } else {

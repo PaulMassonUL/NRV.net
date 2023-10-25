@@ -48,11 +48,11 @@ class ServiceShow implements iServiceShow
         return $showsDTO;
     }
 
-    public function getShowsBySpot(string $lieu): array
+    public function getShowsBySpot(string $spot): array
     {
-        $shows = Show::whereHas('evening', function ($query) use ($lieu) {
-            $query->whereHas('spot', function ($query) use ($lieu) {
-                $query->where('name', $lieu);
+        $shows = Show::whereHas('evening', function ($query) use ($spot) {
+            $query->whereHas('spot', function ($query) use ($spot) {
+                $query->where('name', $spot);
             });
         })->get();
         $showsDTO = [];
