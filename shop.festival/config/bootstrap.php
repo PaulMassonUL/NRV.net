@@ -12,7 +12,7 @@ $c=$builder->build();
 
 $app = \Slim\Factory\AppFactory::createFromContainer($c);
 
-
+$app->add(new Cors());
 $app->addRoutingMiddleware();
 $app->addBodyParsingMiddleware();
 $errorMiddleware = $app->addErrorMiddleware(true, false, false);
