@@ -3,15 +3,16 @@
 namespace festochshop\shop\app\action;
 
 use festochshop\shop\domaine\service\show\iServiceShow;
+use festochshop\shop\domaine\service\show\ServiceShow;
 use festochshop\shop\domaine\service\show\ServiceShowNotFoundException;
 use Psr\Http\Message\ResponseInterface as Response;
 use Psr\Http\Message\ServerRequestInterface as Request;
 
 
-class GetShowsAction extends Action
+class GetShowsFilterByDateAction extends Action
 {
 
-    private iServiceShow $serviceShow;
+    private ServiceShow $serviceShow;
 
     public function __construct(iServiceShow $serviceShow)
     {
@@ -21,11 +22,7 @@ class GetShowsAction extends Action
     public function __invoke(Request $rq, Response $rs, array $args): Response
     {
         try {
-            if (isset($rq->getQueryParams()['date'])) {
-                $shows = $this->serviceShow->getShowsByDate($rq->getQueryParams()['date']);
-            } else {
-                $shows = $this->serviceShow->getShows();
-            }
+            $shows = $this->serviceShow->getShowsByDate($args['date']);
 
             $data = [
                 'type' => 'resource',

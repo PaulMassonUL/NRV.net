@@ -36,4 +36,16 @@ class ServiceShow implements iServiceShow
         return $showsDTO;
     }
 
+    public function getShowsByDate(string $date): array
+    {
+        $shows = Show::whereHas('evening', function ($query) use ($date) {
+            $query->whereDate('date', $date);
+        })->get();
+        $showsDTO = [];
+        foreach ($shows as $show) {
+            $showsDTO[] = $show->toDTO();
+        }
+        return $showsDTO;
+    }
+
 }
