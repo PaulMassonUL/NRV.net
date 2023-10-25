@@ -34,6 +34,7 @@ class GetShowsAction extends Action
                     'description' => $show->description,
                     'time' => $show->time,
                     'video' => $show->video,
+                    'evening_id' => $show->evening_id
                 ];
             }
 

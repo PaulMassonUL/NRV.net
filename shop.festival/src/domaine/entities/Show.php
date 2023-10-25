@@ -17,7 +17,8 @@ class Show extends \Illuminate\Database\Eloquent\Model
             $this->title,
             $this->description,
             $this->time,
-            $this->video
+            $this->video,
+            $this->evening_id
         );
     }
 }
