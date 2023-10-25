@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "esbuild": "^0.18.1",
+    "showdown": "^2.1.0"
+  },
+  "scripts": {
+    "build": "esbuild main.js --bundle --minify --outfile=dist/out.js"
+  }
+}
