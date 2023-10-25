@@ -53,4 +53,16 @@ class ServiceEvening implements iServiceEvening
         return $datesDTO;
     }
 
+    public function getPlaceByEvening(int $id): array
+    {
+        $evening = Evening::find($id);
+        $spot = $evening->spot()->first();
+
+        $nbPlaceTotal = $spot->nb_standing + $spot->nb_seated;
+        $nbTicketSold = $evening->tickets()->count();
+
+        return ['nbTotalPlaces' => $nbPlaceTotal, 'nbTicketSold' => $nbTicketSold, 'nbPlaceStanding' => $spot->nb_standing, 'nbPlaceSeated' => $spot->nb_seated];
+    }
+
+
 }

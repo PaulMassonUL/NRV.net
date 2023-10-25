@@ -7,6 +7,7 @@ use festochshop\shop\app\action\GetAllNameSpotsAction;
 use festochshop\shop\app\action\GetAllSpotsAction;
 use festochshop\shop\app\action\GetAllThematicAction;
 use festochshop\shop\app\action\GetEveningByIdAction;
+use festochshop\shop\app\action\GetNbPlaceAction;
 use festochshop\shop\app\action\GetShowsAction;
 
 return function (\Slim\App $app) {
@@ -22,5 +23,7 @@ return function (\Slim\App $app) {
     $app->get('/spots_evening[/]', GetAllSpotsAction::class)->setName('getAllSpotsEvening');
 
     $app->get('/name_spots[/]', GetAllNameSpotsAction::class)->setName('getAllNameSpots');
+
+    $app->get('/places/{id}[/]', GetNbPlaceAction::class)->setName('getNbPlace');
 
 };
