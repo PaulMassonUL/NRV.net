@@ -10,14 +10,23 @@ class Spot extends \Illuminate\Database\Eloquent\Model
     protected $table = 'Spot';
     protected $primaryKey = 'id';
 
+    public function images () {
+        return $this->hasMany(SpotImage::class, 'spot_id');
+    }
+
     public function toDTO(): SpotDTO
     {
+        $imagesDTO = [];
+        foreach ($this->images()->get() as $image) {
+            $imagesDTO [] = $image->toDTO();
+        }
         return new SpotDTO(
             $this->id,
             $this->name,
             $this->address,
             $this->nb_standing,
-            $this->nb_seated
+            $this->nb_seated,
+            $imagesDTO
         );
     }
 

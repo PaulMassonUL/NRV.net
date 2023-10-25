@@ -2,7 +2,6 @@
 
 namespace festochshop\shop\domaine\entities;
 
-use festochshop\shop\domaine\dto\ArtistDTO;
 use festochshop\shop\domaine\dto\ShowDTO;
 
 class Show extends \Illuminate\Database\Eloquent\Model

@@ -22,7 +22,10 @@ class Evening extends \Illuminate\Database\Eloquent\Model
 
     public function toDTO(): EveningDTO
     {
-        $spot = $this->spot()->first()->toDTO();
+        $showsDTO = [];
+        foreach ($this->shows()->get() as $show) {
+            $showsDTO [] = $show->toDTO();
+        }
         return new EveningDTO(
             $this->id,
             $this->name,
@@ -30,8 +33,10 @@ class Evening extends \Illuminate\Database\Eloquent\Model
             $this->date,
             $this->price,
             $this->reduced_price,
-            $spot
+            $this->spot()->first()->toDTO(),
+            $showsDTO
         );
     }
+
 
 }

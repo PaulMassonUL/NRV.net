@@ -7,7 +7,9 @@ use festochshop\shop\domaine\dto\EveningDTO;
 interface iServiceEvening
 {
 
-    public function getEvening(int $id): EveningDTO;
+    public function getEveningById(int $id): EveningDTO;
+
+    public function getAllThematic(): array;
 
 }
 
