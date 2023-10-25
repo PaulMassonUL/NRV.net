@@ -16,6 +16,10 @@ class Evening extends \Illuminate\Database\Eloquent\Model
         return $this->hasMany(Show::class, 'evening_id');
     }
 
+    public function spot(){
+        return $this->belongsTo(Spot::class, 'spot_id');
+    }
+
     public function toDTO(): EveningDTO
     {
         return new EveningDTO(
