@@ -1,0 +1,61 @@
+$nbColumns: 12;
+$gutterWidth: 2.7%;
+$nbGutters: $nbColumns + 1;
+$columnWidth: (100% - (($nbGutters * $gutterWidth))) / $nbColumns;
+
+@mixin reset {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  text-decoration: none;
+  box-sizing: border-box;
+}
+
+.row {
+  @include reset;
+  display: flex;
+  flex-wrap: wrap;
+
+}
+
+.col {
+  margin-left: $gutterWidth;
+  box-sizing: border-box;
+}
+
+@media screen and (max-width: 300px) {
+  @for $i from 1 through $nbColumns {
+    .s#{$i} {
+      flex-basis: $i * $columnWidth + ($i - 1) * $gutterWidth;
+    }
+
+    .offset-s#{$i} {
+      margin-left: $i * $columnWidth + ($i + 1) * $gutterWidth;
+    }
+  }
+}
+
+@media screen and (min-width: 301px) and (max-width: 600px) {
+  @for $x from 1 through $nbColumns {
+    .m#{$x} {
+      flex-basis: $x * $columnWidth + ($x - 1) * $gutterWidth;
+
+    }
+  }
+}
+
+@media screen and (min-width: 601px) {
+  @for $x from 1 through $nbColumns {
+    .l#{$x} {
+      flex-basis: $x * $columnWidth + ($x - 1) * $gutterWidth;
+
+    }
+  }
+}
+
+
+
+
+
+
+
