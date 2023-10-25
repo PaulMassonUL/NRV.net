@@ -2,9 +2,8 @@
 
 namespace festochshop\shop\app\action;
 
-use festochshop\shop\domaine\service\iServiceShow;
-use festochshop\shop\domaine\service\ServiceShow;
-use festochshop\shop\domaine\service\ServiceShowNotFoundException;
+use festochshop\shop\domaine\service\show\iServiceShow;
+use festochshop\shop\domaine\service\show\ServiceShowNotFoundException;
 use Psr\Http\Message\ResponseInterface as Response;
 use Psr\Http\Message\ServerRequestInterface as Request;
 
@@ -12,7 +11,7 @@ use Psr\Http\Message\ServerRequestInterface as Request;
 class GetShowsAction extends Action
 {
 
-    private ServiceShow $serviceShow;
+    private iServiceShow $serviceShow;
 
     public function __construct(iServiceShow $serviceShow)
     {

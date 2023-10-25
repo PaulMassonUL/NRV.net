@@ -9,14 +9,15 @@ class EveningDTO
     public string $thematic;
     public string $date;
     public int $price;
-    public int $reducted_price;
+    public int $reduced_price;
 
-    public function __construct (string $name, string $thematico, string $date, int $price, int $reducted_price) {
+    public function __construct (int $id, string $name, string $thematic, string $date, int $price, int $reduced_price) {
+        $this->id = $id;
         $this->name = $name;
-        $this->thematic = $thematico;
+        $this->thematic = $thematic;
         $this->date = $date;
         $this->price = $price;
-        $this->reducted_price = $reducted_price;
+        $this->reduced_price = $reduced_price;
     }
 
 
