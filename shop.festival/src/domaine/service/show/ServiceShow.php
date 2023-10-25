@@ -62,4 +62,16 @@ class ServiceShow implements iServiceShow
         return $showsDTO;
     }
 
+    public function getShowsByThematic(string $thematic) : array
+    {
+        $shows = Show::whereHas('evening', function ($query) use ($thematic) {
+            $query->where('thematic', $thematic);
+        })->get();
+        $showsDTO = [];
+        foreach ($shows as $show) {
+            $showsDTO[] = $show->toDTO();
+        }
+        return $showsDTO;
+    }
+
 }
