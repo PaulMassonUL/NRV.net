@@ -10,6 +10,11 @@ class Show extends \Illuminate\Database\Eloquent\Model
     protected $table = 'Show';
     protected $primaryKey = 'id';
 
+    public function evening()
+    {
+        return $this->belongsTo(Evening::class, 'evening_id');
+    }
+
     public function toDTO(): ShowDTO
     {
         return new ShowDTO(
@@ -20,4 +25,7 @@ class Show extends \Illuminate\Database\Eloquent\Model
             $this->video
         );
     }
+
+
+
 }
