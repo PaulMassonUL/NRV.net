@@ -25,6 +25,8 @@ class GetShowsAction extends Action
                 $shows = $this->serviceShow->getShowsByDate($rq->getQueryParams()['date']);
             } elseif (isset($rq->getQueryParams()['lieu'])) {
                 $shows = $this->serviceShow->getShowsBySpot($rq->getQueryParams()['lieu']);
+            } elseif (isset($rq->getQueryParams()['thematic'])) {
+                $shows = $this->serviceShow->getShowsByThematic($rq->getQueryParams()['thematic']);
             } else {
                 $shows = $this->serviceShow->getShows();
             }
