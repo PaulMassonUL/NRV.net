@@ -9,6 +9,9 @@ class Ticket extends Model
     public $connection = 'festival';
     protected $table = 'Ticket';
     protected $primaryKey = 'id';
+    public $keyType = 'string';
+    public $incrementing = false;
+    public $timestamps = false;
 
     protected $fillable = [
         'price',
@@ -17,7 +20,8 @@ class Ticket extends Model
         'user_id'
     ];
 
-    public function toDTO() {
+    public function toDTO()
+    {
 
     }
 

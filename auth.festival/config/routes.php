@@ -1,8 +1,13 @@
 <?php
 
+declare(strict_types=1);
+
+use festochshop\auth\app\action\PostAuthAction;
+
 return function (\Slim\App $app) {
-    $app->get('/h', function ($rq, $rs) {
-        $rs->getBody()->write( "hello world !!!!!!!");
-       return $rs;
-    });
+
+    $app->post('/auth[/]', PostAuthAction::class)->setName('postAuth');
+
+    $app->post('/refresh[/]', PostAuthAction::class)->setName('postRefresh');
+
 };
