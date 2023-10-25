@@ -22,13 +22,15 @@ class Evening extends \Illuminate\Database\Eloquent\Model
 
     public function toDTO(): EveningDTO
     {
+        $spot = $this->spot()->first()->toDTO();
         return new EveningDTO(
             $this->id,
             $this->name,
             $this->thematic,
             $this->date,
             $this->price,
-            $this->reduced_price
+            $this->reduced_price,
+            $spot
         );
     }
 

@@ -32,6 +32,7 @@ class GetEveningByIdAction extends Action
                     'date' => $show->date,
                     'price' => $show->price,
                     'reduced_price' => $show->reduced_price,
+                    'spot' => $show->spot
                 ],
             ];
 
