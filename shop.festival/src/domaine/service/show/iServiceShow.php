@@ -1,6 +1,6 @@
 <?php
 
-namespace festochshop\shop\domaine\service;
+namespace festochshop\shop\domaine\service\show;
 
 use festochshop\shop\domaine\dto\ShowDTO;
 
@@ -8,8 +8,6 @@ interface iServiceShow
 {
 
     public function getShows(): array;
-
-    public function getShow(int $id): ShowDTO;
 
 }
 

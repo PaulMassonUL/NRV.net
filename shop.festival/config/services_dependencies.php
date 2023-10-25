@@ -9,7 +9,11 @@ return [
     },
 
     'ServiceShow' => function (\Psr\Container\ContainerInterface $container) {
-        return new \festochshop\shop\domaine\service\ServiceShow($container->get('logger'));
+        return new \festochshop\shop\domaine\service\show\ServiceShow($container->get('logger'));
+    },
+
+    'ServiceEvening' => function (\Psr\Container\ContainerInterface $container) {
+        return new \festochshop\shop\domaine\service\evening\ServiceEvening($container->get('logger'));
     },
 
 ];
