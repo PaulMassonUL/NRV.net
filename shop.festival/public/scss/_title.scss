@@ -1,0 +1,15 @@
+h1 {
+  position: relative;
+  text-align: center;
+  margin-bottom: 50px;
+
+  &:after {
+    content:"";
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 60px;
+    border-bottom: 3px solid black;
+    width: 13%;
+  }
+}
