@@ -2,6 +2,7 @@
 
 declare(strict_types=1);
 
+use festochshop\shop\app\action\GetAllThematicAction;
 use festochshop\shop\app\action\GetEveningByIdAction;
 use festochshop\shop\app\action\GetShowsAction;
 
@@ -11,7 +12,7 @@ return function (\Slim\App $app) {
 
     $app->get('/evening/{id}[/]', GetEveningByIdAction::class)->setName('getEveningById');
 
-//    $app->get('/evening[/]', GetEveningsAction::class)->setName('getEvenings');
+    $app->get('/thematics[/]', GetAllThematicAction::class)->setName('getAllThematic');
 
 
 };
