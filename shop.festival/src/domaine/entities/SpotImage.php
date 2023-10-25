@@ -12,6 +12,11 @@ class SpotImage extends Model
     protected $table = 'SpotImage';
     protected $primaryKey = 'id';
 
+    protected $fillable = [
+        'path',
+        'spot_id',
+    ];
+
     public function toDTO () {
         return new SpotImageDTO($this->id, $this->path);
     }

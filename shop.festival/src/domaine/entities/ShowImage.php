@@ -11,6 +11,11 @@ class ShowImage extends Model
     protected $table = 'ShowImage';
     protected $primaryKey = 'id';
 
+    protected $fillable = [
+        'path',
+        'show_id',
+    ];
+
     public function toDTO() {
         return new ShowImageDTO($this->id, $this->path);
     }

@@ -11,6 +11,11 @@ class Artist extends Model
     protected $table = 'Artist';
     protected $primaryKey = 'id';
 
+    protected $fillable = [
+        'name',
+        'show_id'
+    ];
+
     public function toDTO() {
         return new ArtistDTO($this->id, $this->name);
     }

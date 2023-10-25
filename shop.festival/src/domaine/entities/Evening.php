@@ -11,6 +11,15 @@ class Evening extends \Illuminate\Database\Eloquent\Model
     protected $primaryKey = 'id';
     public $timestamps = false;
 
+    protected $fillable = [
+        'name',
+        'thematic',
+        'date',
+        'price',
+        'reduced_price',
+        'spot_id',
+    ];
+
     public function shows()
     {
         return $this->hasMany(Show::class, 'evening_id');
