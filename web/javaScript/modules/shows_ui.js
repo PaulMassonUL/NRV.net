@@ -30,12 +30,14 @@ class ShowsUI {
             show.date = show.date.charAt(0).toUpperCase() + show.date.slice(1);
 
             article.innerHTML = `
+            <a href="../../web/html/soireeDesc.html">
             <div class="article-content">
                 <h3>${show.title}</h3>
                 <p>${show.date}</p>
                 <p>${artistNamesString}</p>
             </div>
             <img src="${show.images[0].path}">
+            </a>
             `;
 
             showsContainer.appendChild(article);
@@ -96,11 +98,10 @@ class ShowsUI {
 
         dates.dates.forEach(date => {
             let dateOrigine = date;
-            //transformer date en français
+            //transformer date sous format JJJ DD MMM (ex : JEU 12 SEP)
             const date_li = new Date(date);
-            const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric'};
-            date = date_li.toLocaleDateString('fr-FR', options);
-            date = date.charAt(0).toUpperCase() + date.slice(1);
+            date = date_li.toLocaleDateString('fr-FR', { weekday: 'short', day: 'numeric', month: 'short' });
+            date = date.toUpperCase();
 
             const li = document.createElement('li');
             li.innerHTML = `
