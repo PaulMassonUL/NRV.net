@@ -1,13 +1,17 @@
+$headerHeight: 300px;
+
 header {
   nav {
-    height: 350px;
+    height: $headerHeight;
+
     & > img {
       position: absolute;
       top: 0;
       left: 0;
       width: 100%;
+      height: $headerHeight;
+
       object-fit: cover;
-      max-height: 350px;
     }
     ul {
       position: absolute;

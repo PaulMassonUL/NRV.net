@@ -10,10 +10,12 @@
     position: relative;
     margin-top: 2.7%;
     @extend .col;
-    @extend .s6;
-    @extend .m4;
-    @extend .l3;
+    @extend .s12;
+    @extend .m6;
+    @extend .l4;
+    @extend .xl3;
     box-shadow: 0 0 14px 5px lighten(black, 60%);
+    overflow: hidden;
 
     .article-content {
       position: absolute;
@@ -23,6 +25,7 @@
       background-color: rgba(0, 0, 0, 0.6);
       padding: 5px;
       border-radius: 10px;
+
     }
 
     img {

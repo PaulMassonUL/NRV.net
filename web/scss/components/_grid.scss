@@ -23,7 +23,7 @@ $columnWidth: (100% - (($nbGutters * $gutterWidth))) / $nbColumns;
   box-sizing: border-box;
 }
 
-@media screen and (max-width: 300px) {
+@media screen and (max-width: 600px) {
   @for $i from 1 through $nbColumns {
     .s#{$i} {
       flex-basis: $i * $columnWidth + ($i - 1) * $gutterWidth;
@@ -35,7 +35,7 @@ $columnWidth: (100% - (($nbGutters * $gutterWidth))) / $nbColumns;
   }
 }
 
-@media screen and (min-width: 301px) and (max-width: 600px) {
+@media screen and (min-width: 601px) and (max-width: 991px) {
   @for $x from 1 through $nbColumns {
     .m#{$x} {
       flex-basis: $x * $columnWidth + ($x - 1) * $gutterWidth;
@@ -47,9 +47,21 @@ $columnWidth: (100% - (($nbGutters * $gutterWidth))) / $nbColumns;
   }
 }
 
-@media screen and (min-width: 601px) {
+@media screen and (min-width: 992px) and (max-width: 1200px) {
   @for $x from 1 through $nbColumns {
     .l#{$x} {
+      flex-basis: $x * $columnWidth + ($x - 1) * $gutterWidth;
+
+    }
+    .offset-l#{$x} {
+      margin-left: $x * $columnWidth + ($x + 1) * $gutterWidth;
+    }
+  }
+}
+
+@media screen and (min-width: 1201px) {
+  @for $x from 1 through $nbColumns {
+    .xl#{$x} {
       flex-basis: $x * $columnWidth + ($x - 1) * $gutterWidth;
 
     }

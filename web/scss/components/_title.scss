@@ -13,4 +13,11 @@ h1 {
     top: 50px;
   }
 
+  @media screen and (max-width: 600px) {
+    &:after {
+      border-bottom: initial;
+    }
+
+  }
+
 }
