@@ -13,6 +13,8 @@
     @extend .s6;
     @extend .m4;
     @extend .l3;
+    box-shadow: 0 0 14px 5px lighten(black, 60%);
+    border-radius: 10px;
 
     .article-content {
       position: absolute;
@@ -21,7 +23,6 @@
       color: white;
       background-color: rgba(0, 0, 0, 0.6);
       padding: 5px;
-      border-radius: 10px;
     }
 
     img {
