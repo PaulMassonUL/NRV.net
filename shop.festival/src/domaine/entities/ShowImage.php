@@ -2,7 +2,7 @@
 
 namespace festochshop\shop\domaine\entities;
 
-use festochshop\shop\domaine\dto\ShowImageDTO;
+use festochshop\shop\domaine\dto\shop\ShowImageDTO;
 use Illuminate\Database\Eloquent\Model;
 
 class ShowImage extends Model

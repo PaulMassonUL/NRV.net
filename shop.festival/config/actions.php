@@ -1,12 +1,15 @@
 <?php
 
-use festochshop\shop\app\action\GetAllDatesEveningAction;
-use festochshop\shop\app\action\GetAllNameSpotsAction;
-use festochshop\shop\app\action\GetAllSpotsAction;
-use festochshop\shop\app\action\GetAllThematicAction;
-use festochshop\shop\app\action\GetEveningByIdAction;
-use festochshop\shop\app\action\GetNbPlaceAction;
-use festochshop\shop\app\action\GetShowsAction;
+use festochshop\shop\app\action\auth\PostAuthSigninAction;
+use festochshop\shop\app\action\auth\PostAuthSignupAction;
+use festochshop\shop\app\action\auth\PostRefreshAction;
+use festochshop\shop\app\action\shop\GetAllDatesEveningAction;
+use festochshop\shop\app\action\shop\GetAllNameSpotsAction;
+use festochshop\shop\app\action\shop\GetAllSpotsAction;
+use festochshop\shop\app\action\shop\GetAllThematicAction;
+use festochshop\shop\app\action\shop\GetEveningByIdAction;
+use festochshop\shop\app\action\shop\GetNbPlaceAction;
+use festochshop\shop\app\action\shop\GetShowsAction;
 use Psr\Container\ContainerInterface;
 
 return [
@@ -37,6 +40,18 @@ return [
 
     GetNbPlaceAction::class => function (ContainerInterface $container){
         return new GetNbPlaceAction($container->get('ServiceEvening'));
+    },
+
+    PostAuthSigninAction::class => function (ContainerInterface $container){
+        return new PostAuthSigninAction($container->get('AuthService'));
+    },
+
+    PostAuthSignupAction::class => function (ContainerInterface $container){
+        return new PostAuthSignupAction($container->get('AuthService'));
+    },
+
+    PostRefreshAction::class => function (ContainerInterface $container){
+        return new PostRefreshAction($container->get('AuthService'));
     },
 
 ];

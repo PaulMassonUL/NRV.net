@@ -2,7 +2,7 @@
 
 namespace festochshop\shop\domaine\entities;
 
-use festochshop\shop\domaine\dto\ShowDTO;
+use festochshop\shop\domaine\dto\shop\ShowDTO;
 
 class Show extends \Illuminate\Database\Eloquent\Model
 {

@@ -2,7 +2,7 @@
 
 namespace festochshop\shop\domaine\service\show;
 
-use festochshop\shop\domaine\dto\ShowDTO;
+use festochshop\shop\domaine\dto\shop\ShowDTO;
 use festochshop\shop\domaine\entities\Show;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Psr\Log\LoggerInterface;

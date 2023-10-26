@@ -2,7 +2,7 @@
 
 namespace festochshop\shop\domaine\entities;
 
-use festochshop\shop\domaine\dto\EveningDTO;
+use festochshop\shop\domaine\dto\shop\EveningDTO;
 
 class Evening extends \Illuminate\Database\Eloquent\Model
 {

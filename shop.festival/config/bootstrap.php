@@ -2,6 +2,7 @@
 
 use DI\ContainerBuilder;
 use festochshop\shop\domaine\middlewares\Cors;
+use festochshop\shop\domaine\middlewares\Jwt;
 use Illuminate\Database\Capsule\Manager;
 use Slim\Factory\AppFactory;
 
@@ -16,6 +17,7 @@ $c=$builder->build();
 $app = AppFactory::createFromContainer($c);
 
 $app->add(new Cors());
+
 $app->addRoutingMiddleware();
 $app->addBodyParsingMiddleware();
 $errorMiddleware = $app->addErrorMiddleware(true, false, false);
@@ -26,6 +28,7 @@ $errorHandler->forceContentType('application/json');
 $capsule = new Manager();
 
 $capsule->addConnection(parse_ini_file("festival.db.ini"), 'festival');
+$capsule->addConnection(parse_ini_file("auth.db.ini"), 'auth');
 $capsule->setAsGlobal();
 $capsule->bootEloquent();
 
