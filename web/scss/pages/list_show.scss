@@ -23,7 +23,7 @@ main {
         display: inline-block;
         padding: 10px;
         border-bottom: 1px solid rgba(248, 58, 62, 0.5);
-        margin: 20px;
+        margin: 5px 20px;
 
         &:hover {
           background-color: rgba(248, 58, 62, 0.5);
@@ -35,6 +35,27 @@ main {
           background-color: rgba(248, 58, 62, 0.5);
         }
       }
+    }
+  }
+
+  .badge {
+    cursor: pointer;
+
+    &:hover {
+      background-color: rgba(248, 58, 62, 0.5);
+      transition: 0.5s;
+    }
+
+    &:not(:hover) {
+      transition: 0.5s;
+
+      img {
+        color: white;
+      }
+    }
+
+    &:checked {
+
     }
   }
 
