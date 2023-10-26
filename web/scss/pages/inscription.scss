@@ -1,5 +1,6 @@
 @import "../components/card";
 @import "../components/button";
+@import "../components/title";
 
 .card-register {
   @extend .card;
@@ -16,9 +17,6 @@
   }
 }
 
-.text-register {
-  color: #F83A3E;
-}
 
 .input-register {
   height: 25px;

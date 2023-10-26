@@ -1,5 +1,6 @@
 @import "../components/card";
 @import "../components/button";
+@import "../components/title";
 
 .card-login {
   @extend .card;
@@ -16,9 +17,6 @@
   }
 }
 
-.text-connexion {
-  color: #F83A3E;
-}
 
 .input-login {
   height: 25px;
