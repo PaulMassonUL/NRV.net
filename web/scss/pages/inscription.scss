@@ -1,0 +1,32 @@
+@import "../components/card";
+@import "../components/button";
+
+.card-register {
+  @extend .card;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 40%;
+  margin: 40px auto;
+
+  & > * {
+    margin-bottom: 40px;
+  }
+}
+
+.text-register {
+  color: #F83A3E;
+}
+
+.input-register {
+  height: 25px;
+  border-radius: 5px;
+  padding: 4px 15px;
+  border: none;
+}
+
+.button-register {
+  @extend .button-red;
+}
