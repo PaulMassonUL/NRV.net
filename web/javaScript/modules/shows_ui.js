@@ -24,10 +24,17 @@ class ShowsUI {
                 liste_artists_name.push(artist.name);
             });
             const artistNamesString = liste_artists_name.join(' - ');
+
+            //afficher la date en français + heure sans les secondes
+            const date = new Date(show.date + ' ' + show.time);
+            const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute:'numeric'};
+            show.date = date.toLocaleDateString('fr-FR', options);
+            show.date = show.date.charAt(0).toUpperCase() + show.date.slice(1);
+
             article.innerHTML = `
             <div class="article-content">
                 <h3>${show.title}</h3>
-                <p>${show.time}</p>
+                <p>${show.date}</p>
                 <p>${artistNamesString}</p>
             </div>
             <img src="${show.images[0].path}">

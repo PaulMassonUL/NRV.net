@@ -87,4 +87,15 @@ class ServiceShow implements iServiceShow
         return $showsDTO;
     }
 
+    public function getEvening(int $id)
+    {
+        try {
+            $evening = Show::findOrFail($id)->evening()->first();
+        } catch (ModelNotFoundException $e) {
+            $this->logger->error($e->getMessage());
+            throw new ServiceShowNotFoundException('No evening found');
+        }
+        return $evening;
+    }
+
 }

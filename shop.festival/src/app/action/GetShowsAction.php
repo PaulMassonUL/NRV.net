@@ -36,11 +36,15 @@ class GetShowsAction extends Action
                 'nbShows' => count($shows),
             ];
             foreach ($shows as $show) {
+                $date = $this->serviceShow->getEvening($show->evening_id)->date;
+                //supprimer de l'attrbut date le format horaire car c'est un datetime
+                $date = substr($date, 0, 10);
                 $data['shows'][] = [
                     'id' => $show->id,
                     'title' => $show->title,
                     'description' => $show->description,
                     'time' => $show->time,
+                    'date' => $date,
                     'video' => $show->video,
                     'evening_id' => $show->evening_id,
                     'artists' => $show->artists,

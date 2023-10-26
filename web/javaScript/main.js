@@ -1,4 +1,3 @@
-
 import shows from "./modules/shows.js";
 
 document.addEventListener('DOMContentLoaded', () => {
