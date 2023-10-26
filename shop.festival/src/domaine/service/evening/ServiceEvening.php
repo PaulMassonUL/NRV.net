@@ -18,6 +18,28 @@ class ServiceEvening implements iServiceEvening
         $this->logger = $logger;
     }
 
+    public function createEvening(EveningDTO $eveningDTO): EveningDTO
+    {
+        $evening = new Evening();
+        $evening->name = $eveningDTO->name;
+        $evening->date = $eveningDTO->date;
+        $evening->thematic = $eveningDTO->thematic;
+        $evening->spot_id = $eveningDTO->spot_id;
+        $evening->save();
+        return $evening->toDTO();
+    }
+
+    public function updateEvening(EveningDTO $eveningDTO): EveningDTO
+    {
+        $evening = Evening::findOrFail($eveningDTO->id);
+        $evening->name = $eveningDTO->name;
+        $evening->date = $eveningDTO->date;
+        $evening->thematic = $eveningDTO->thematic;
+        $evening->spot_id = $eveningDTO->spot_id;
+        $evening->save();
+        return $evening->toDTO();
+    }
+
     /**
      * @throws ServiceEveningNotFoundException
      */

@@ -28,7 +28,7 @@ header {
         font-size: 1.2em;
       }
 
-      a:hover {
+      .menu:hover {
         background-color: #EDEAEA;
         border-radius: 20px;
         padding: 3px 10px;
@@ -37,14 +37,14 @@ header {
 
       }
 
-      a:active {
+      .menu:active {
         background-color: #EDEAEA;
         border-radius: 20px;
         padding: 3px 10px;
         color: black;
       }
 
-      a:not(:hover) {
+      .menu:not(:hover) {
         transition: .5s;
       }
 

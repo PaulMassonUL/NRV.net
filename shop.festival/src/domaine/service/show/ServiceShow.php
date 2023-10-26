@@ -18,10 +18,21 @@ class ServiceShow implements iServiceShow
         $this->logger = $logger;
     }
 
-    //create function to create a show
     public function createShow(ShowDTO $showDTO): ShowDTO
     {
         $show = new Show();
+        $show->title = $showDTO->title;
+        $show->description = $showDTO->description;
+        $show->time = $showDTO->time;
+        $show->video = $showDTO->video;
+        $show->evening_id = $showDTO->evening_id;
+        $show->save();
+        return $show->toDTO();
+    }
+
+    public function updateShow(ShowDTO $showDTO): ShowDTO
+    {
+        $show = Show::findOrFail($showDTO->id);
         $show->title = $showDTO->title;
         $show->description = $showDTO->description;
         $show->time = $showDTO->time;
