@@ -1,8 +1,7 @@
 $bgColorPrimary: #D9D9D9;
 
-.card {
+.card-show {
   background-color: $bgColorPrimary;
   box-shadow: 0 0 14px 5px lighten(black, 60%);
-  border-radius: 20px;
-  padding: 20px;
+  border-radius: 10px;
 }
