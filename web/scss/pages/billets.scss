@@ -1,0 +1,24 @@
+@import "../components/card";
+
+.card-place {
+  @extend .card;
+
+  width: 90%;
+  margin: 40px auto;
+}
+
+.text-evening {
+  text-align: center;
+}
+
+.value {
+  color: dodgerblue;
+}
+
+.max-value {
+  color: #F83A3E;
+}
+
+.article {
+
+}
