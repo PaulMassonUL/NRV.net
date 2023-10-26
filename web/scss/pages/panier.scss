@@ -1,6 +1,11 @@
 @import "../components/card";
 @import "../components/button";
+@import "../components/title";
 
+
+.title {
+  @extend .title;
+}
 
 .card {
 

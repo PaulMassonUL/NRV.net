@@ -4,11 +4,7 @@
 @import "../components/button";
 
 .text-account {
-  text-align: center;
-  @extend .col;
-  @extend .l12;
-  @extend .m12;
-  @extend .s12;
+  @extend .title;
 }
 
 .card-account {
