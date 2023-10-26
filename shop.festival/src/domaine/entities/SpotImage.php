@@ -2,8 +2,7 @@
 
 namespace festochshop\shop\domaine\entities;
 
-use festochshop\shop\domaine\dto\SpotDTO;
-use festochshop\shop\domaine\dto\SpotImageDTO;
+use festochshop\shop\domaine\dto\shop\SpotImageDTO;
 use Illuminate\Database\Eloquent\Model;
 
 class SpotImage extends Model

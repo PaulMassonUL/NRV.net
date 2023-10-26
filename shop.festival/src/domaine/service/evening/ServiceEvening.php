@@ -3,7 +3,7 @@
 namespace festochshop\shop\domaine\service\evening;
 
 use Exception;
-use festochshop\shop\domaine\dto\EveningDTO;
+use festochshop\shop\domaine\dto\shop\EveningDTO;
 use festochshop\shop\domaine\entities\Evening;
 use Psr\Log\LoggerInterface;
 

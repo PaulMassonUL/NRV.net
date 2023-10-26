@@ -2,7 +2,7 @@
 
 namespace festochshop\shop\domaine\service\evening;
 
-use festochshop\shop\domaine\dto\EveningDTO;
+use festochshop\shop\domaine\dto\shop\EveningDTO;
 
 interface iServiceEvening
 {

@@ -20,4 +20,19 @@ return [
         return new \festochshop\shop\domaine\service\spot\ServiceSpot($container->get('logger'));
     },
 
+
+    'JwtManager' => function(\Psr\Container\ContainerInterface $c) {
+        $manager = new \festochshop\shop\domaine\manager\JwtManager($c->get('auth.token.secret'), $c->get('auth.token.expiration'));
+        $manager->setIssuer($c->get('auth.token.issuer'));
+        return $manager;
+    },
+
+    'AuthProvider' => function(\Psr\Container\ContainerInterface $c) {
+        return new \festochshop\shop\domaine\provider\AuthProvider();
+    },
+
+    'AuthService' => function(\Psr\Container\ContainerInterface $c) {
+        return new \festochshop\shop\domaine\service\auth\AuthService($c->get('JwtManager'), $c->get('AuthProvider'), $c->get('logger'));
+    },
+
 ];

@@ -2,7 +2,7 @@
 
 namespace festochshop\shop\domaine\entities;
 
-use festochshop\shop\domaine\dto\ArtistDTO;
+use festochshop\shop\domaine\dto\shop\ArtistDTO;
 use Illuminate\Database\Eloquent\Model;
 
 class Artist extends Model
