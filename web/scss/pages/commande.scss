@@ -1,0 +1,36 @@
+@import "../components/grid";
+@import "../components/button";
+@import "../components/card";
+
+
+.card {
+  margin: 30px;
+  .tickets {
+    @extend .row;
+
+    article {
+      @extend .col;
+      @extend .s12;
+      @extend .m12;
+      @extend .l6;
+
+      border-radius: 10px;
+      background-color: rgba(248, 58, 62, 0.5);
+      margin-top: 20px;
+      margin-bottom: 20px;
+    }
+
+    button {
+      @extend .col;
+      @extend .s12;
+      @extend .offset-m3;
+      @extend .m6;
+      @extend .offset-l3;
+      @extend .l6;
+
+      font-weight: bold;
+      margin-top: 20px;
+      margin-bottom: 20px;
+    }
+  }
+}

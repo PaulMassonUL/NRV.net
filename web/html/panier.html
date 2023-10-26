@@ -4,34 +4,69 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <link rel="stylesheet" href="../css/components/headerFotter.css">
+    <link rel="stylesheet" href="../css/pages/panier.css">
 
 </head>
 <body>
 <header>
-  <nav>
-    <img src="../img/NRV-Banniere2.png" alt="">
-    <ul>
-      <li><a href="./list_show.html"><img src="../img/NRV-Logo.png" alt="bannière avec lieu et date de l'évenement"></a></li>
-      <li><a class="menu" href="./list_show.html">Shows</a></li>
-      <li><a class="menu" href="./billets.html">Mes billets</a></li>
-      <li><a class="menu" href="./panier.html">Panier</a></li>
-      <li><a class="menu" href="./compte.html">Mon compte</a></li>
-    </ul>
-  </nav>
+    <nav>
+        <img src="../img/NRV-Banniere2.png" alt="">
+        <ul>
+            <li><a href="./list_show.html"><img src="../img/NRV-Logo.png"
+                                                alt="bannière avec lieu et date de l'évenement"></a></li>
+            <li><a class="menu" href="./list_show.html">Shows</a></li>
+            <li><a class="menu" href="./billets.html">Mes billets</a></li>
+            <li><a class="menu" href="./panier.html">Panier</a></li>
+            <li><a class="menu" href="./compte.html">Mon compte</a></li>
+        </ul>
+    </nav>
 </header>
 
 <main>
+    <section class="card">
+        <h1>Mon panier</h1>
+        <div class="tickets">
+            <article>
+                <h2>title</h2>
+                <p>date</p>
+                <p>artistes</p>
+            </article>
+            <article>
+                <h2>title</h2>
+                <p>date</p>
+                <p>artistes</p>
+            </article>
+            <article>
+                <h2>Récapitulatif</h2>
+                <p>Total HT</p>
+                <p>Total TTC</p>
+                <button class="button button-green">Payer</button>
+                <div class="type-payment">
+                    <h3>Nous accepetons :</h3>
+                    <div class="logos">
+                        <img src="../img/icons/visa.png" alt="logo visa">
+                        <img src="../img/icons/mastercard.png" alt="logo mastercard">
+                        <img src="../img/icons/paypal.png" alt="logo paypal">
+                    </div>
+                </div>
+
+
+            </article>
+        </div>
+
+    </section>
+
 
 </main>
 
 <footer>
-  <nav>
-    <ul>
-      <li><a href="./list_show.html">Shows</a></li>
-      <li><a href="./billets.html">Mes billets</a></li>
-      <li><a href="./panier.html">Panier</a></li>
-    </ul>
-  </nav>
+    <nav>
+        <ul>
+            <li><a href="./list_show.html">Shows</a></li>
+            <li><a href="./billets.html">Mes billets</a></li>
+            <li><a href="./panier.html">Panier</a></li>
+        </ul>
+    </nav>
 </footer>
 </body>
 </html>

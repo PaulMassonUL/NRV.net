@@ -33,3 +33,7 @@
 ##### draw.io temp files
 *.bkp
 *.dtmp
+
+##### sass
+**/.sass-cache/
+*.map
