@@ -1,0 +1,52 @@
+@import "../components/card";
+@import "../components/grid";
+@import "../components/article";
+@import "../components/title";
+
+.text-account {
+  text-align: center;
+  @extend .col;
+  @extend .l12;
+  @extend .m12;
+  @extend .s12;
+}
+
+.card-account {
+  @extend .row;
+
+  width: 80%;
+  margin: 40px auto;
+
+  .card-account-details {
+    @extend .col;
+    @extend .l6;
+    @extend .m12;
+    @extend .s12;
+    @extend .card;
+
+    .title {
+      text-align: center;
+      margin-bottom: 25px;
+    }
+  }
+
+  .card-account-last-commande {
+    @extend .col;
+    @extend .l6;
+    @extend .m12;
+    @extend .s12;
+    @extend .card;
+    text-align: center;
+
+    .title {
+      text-align: center;
+      margin-bottom: 25px;
+    }
+
+    img {
+      width: 100%;
+      max-width: 300px;
+    }
+  }
+}
+
