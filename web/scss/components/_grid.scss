@@ -41,6 +41,9 @@ $columnWidth: (100% - (($nbGutters * $gutterWidth))) / $nbColumns;
       flex-basis: $x * $columnWidth + ($x - 1) * $gutterWidth;
 
     }
+    .offset-m#{$x} {
+      margin-left: $x * $columnWidth + ($x + 1) * $gutterWidth;
+    }
   }
 }
 
@@ -49,6 +52,9 @@ $columnWidth: (100% - (($nbGutters * $gutterWidth))) / $nbColumns;
     .l#{$x} {
       flex-basis: $x * $columnWidth + ($x - 1) * $gutterWidth;
 
+    }
+    .offset-l#{$x} {
+      margin-left: $x * $columnWidth + ($x + 1) * $gutterWidth;
     }
   }
 }
