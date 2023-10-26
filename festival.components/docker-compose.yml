@@ -10,7 +10,7 @@ services:
     image: 'canals/php:latest'
     env_file: ./shop.env
     ports:
-      - '11110:443'
+      - '11110:80'
     volumes:
       - ../shop.festival/public:/var/www/html
       - ../shop.festival:/var/www
@@ -53,7 +53,7 @@ services:
     image: 'canals/php:latest'
     env_file: ./auth.env
     ports:
-      - '11113:443'
+      - '11113:80'
     volumes:
       - ../auth.festival/public:/var/www/html
       - ../auth.festival:/var/www
