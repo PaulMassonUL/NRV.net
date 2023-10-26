@@ -2,23 +2,26 @@
 @import "../components/grid";
 
 main {
-  div {
+  section {
     @extend .row;
     justify-content: center;
-
+    margin-bottom: 2.7%;
 
     article {
       @extend .col;
       @extend .s12;
       @extend .m6;
       @extend .l4;
+      @extend .card;
 
       border-radius: 10px;
       background-color: rgba(248, 58, 62, 0.5);
       text-align: center;
       margin-top: 2.7%;
-      padding: 5px;
+    }
 
+    article:hover {
+      cursor: pointer;
     }
   }
 }
