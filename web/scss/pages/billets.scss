@@ -1,4 +1,5 @@
 @import "../components/card";
+@import "../components/grid";
 
 .card-place {
   @extend .card;
@@ -15,10 +16,35 @@
   color: dodgerblue;
 }
 
-.max-value {
-  color: #F83A3E;
+span {
+  font-weight: bold;
 }
 
-.article {
+.min-value {
+  @extend .col;
+  @extend .l2;
+  text-align: left;
+}
 
+.max-value {
+  color: #F83A3E;
+  @extend .col;
+  @extend .l2;
+  text-align: right;
+}
+
+.value {
+  @extend .col;
+  @extend .l8;
+  text-align: center;
+}
+
+.main-progress {
+  @extend .row;
+}
+
+.progress-bar {
+  @extend .col;
+  @extend .l12;
+  height: 50px;
 }
