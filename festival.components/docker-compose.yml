@@ -10,8 +10,7 @@ services:
     image: 'canals/php:latest'
     env_file: ./shop.env
     ports:
-      - '2080:80'
-      - '1443:443'
+      - '11110:443'
     volumes:
       - ../shop.festival/public:/var/www/html
       - ../shop.festival:/var/www
@@ -32,7 +31,7 @@ services:
     command: '--default-authentication-plugin=mysql_native_password --character-set-server=utf8 --collation-server=utf8_general_ci'
     env_file: ./shop.env
     ports:
-      - '3307:3306'
+      - '11111:3306'
     networks:
       - festival-shop.net
     volumes:
@@ -43,8 +42,9 @@ services:
   adminer:
     image: adminer
     env_file: ./shop.env
+    command: php -S 0.0.0.0:8080 -t /var/www/html
     ports:
-      - '8080:8080'
+      - '11112:8080'
     networks:
       - festival-shop.net
 
@@ -53,8 +53,7 @@ services:
     image: 'canals/php:latest'
     env_file: ./auth.env
     ports:
-      - '2780:80'
-      - '2743:443'
+      - '11113:443'
     volumes:
       - ../auth.festival/public:/var/www/html
       - ../auth.festival:/var/www
@@ -71,11 +70,8 @@ services:
     command: '--default-authentication-plugin=mysql_native_password --character-set-server=utf8 --collation-server=utf8_general_ci'
     env_file: ./auth.env
     ports:
-      - '3308:3306'
+      - '11114:3306'
     networks:
       - festival-shop.net
     volumes:
       - ../auth.festival/sql:/var/sql
-
-
-
