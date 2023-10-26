@@ -13,6 +13,7 @@
     @extend .s6;
     @extend .m4;
     @extend .l3;
+    box-shadow: 0 0 14px 5px lighten(black, 60%);
 
     .article-content {
       position: absolute;
