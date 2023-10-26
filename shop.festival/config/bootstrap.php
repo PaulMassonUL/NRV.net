@@ -2,6 +2,8 @@
 
 use DI\ContainerBuilder;
 use festochshop\shop\domaine\middlewares\Cors;
+use Illuminate\Database\Capsule\Manager;
+use Slim\Factory\AppFactory;
 
 $builder = new ContainerBuilder();
 
@@ -11,7 +13,7 @@ $builder->addDefinitions(__DIR__ . '/actions.php');
 
 $c=$builder->build();
 
-$app = \Slim\Factory\AppFactory::createFromContainer($c);
+$app = AppFactory::createFromContainer($c);
 
 $app->add(new Cors());
 $app->addRoutingMiddleware();
@@ -21,7 +23,7 @@ $errorMiddleware = $app->addErrorMiddleware(true, false, false);
 $errorHandler = $errorMiddleware->getDefaultErrorHandler();
 $errorHandler->forceContentType('application/json');
 
-$capsule = new \Illuminate\Database\Capsule\Manager();
+$capsule = new Manager();
 
 $capsule->addConnection(parse_ini_file("festival.db.ini"), 'festival');
 $capsule->setAsGlobal();
