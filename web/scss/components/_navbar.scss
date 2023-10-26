@@ -95,6 +95,21 @@ header {
         text-align: center;
 
       }
+
+      @media screen and (max-width: 600px) {
+        li {
+          grid-column: 1 / 13 !important;
+          text-align: left !important;
+          margin-left: 2em;
+        }
+
+        li:first-child {
+          img {
+            width: 30%;
+            margin-top: 10px;
+          }
+        }
+      }
     }
   }
 }
