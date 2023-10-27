@@ -32,6 +32,10 @@ return function (\Slim\App $app) {
 
     $app->get('/places/{id}[/]', GetNbPlaceAction::class)->setName('getNbPlace');
 
+    $app->get('/command/{id}[/]', \festochshop\shop\app\action\shop\GetCommandAction::class);
+
+    $app->post('/commands[/]', \festochshop\shop\app\action\shop\PostCreerCommandeAction::class);
+
     // exemple pour ajouter le controle du middleware sur une route :
     //     $app->get('/maroute', MaClasse::class)->setName('name')->add($JwtVerification);
 

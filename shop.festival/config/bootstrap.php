@@ -17,7 +17,7 @@ $c = $builder->build();
 $app = AppFactory::createFromContainer($c);
 
 // gestion des requetes simples
-$app->add(new Cors());
+//$app->add(new Cors());
 
 // gestion des requetes controlees avec pre flight
 $app->options('/{routes:.+}', Preflight::class);

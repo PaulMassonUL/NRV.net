@@ -17,6 +17,7 @@ class UserDTO extends DTO
     public string $refresh_token_expiration_date;
     public string $reset_passwd_token;
     public string $reset_passwd_token_expiration_date;
+    public array $commands;
 
     public function __construct(string $email)
     {

@@ -35,4 +35,8 @@ return [
         return new \festochshop\shop\domaine\service\auth\AuthService($c->get('JwtManager'), $c->get('AuthProvider'), $c->get('logger'));
     },
 
+    'CommandService' => function(\DI\Container $c) {
+        return new \festochshop\shop\domaine\service\commande\ServiceCommand($c->get('logger'));
+    }
+
 ];

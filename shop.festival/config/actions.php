@@ -54,4 +54,12 @@ return [
         return new PostRefreshAction($container->get('AuthService'));
     },
 
+    \festochshop\shop\app\action\shop\GetCommandAction::class => function (ContainerInterface $container) {
+    return new \festochshop\shop\app\action\shop\GetCommandAction($container->get('CommandService'));
+    },
+
+    \festochshop\shop\app\action\shop\PostCreerCommandeAction::class => function(ContainerInterface $container) {
+    return new \festochshop\shop\app\action\shop\PostCreerCommandeAction($container->get('CommandService'));
+    }
+
 ];

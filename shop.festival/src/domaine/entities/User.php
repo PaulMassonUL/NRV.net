@@ -3,6 +3,7 @@
 namespace festochshop\shop\domaine\entities;
 
 use festochshop\shop\domaine\dto\auth\UserDTO;
+use festochshop\shop\domaine\dto\shop\CommandDTO;
 
 class User extends \Illuminate\Database\Eloquent\Model
 {
@@ -26,6 +27,10 @@ class User extends \Illuminate\Database\Eloquent\Model
         'reset_passwd_token_expiration_date'
     ];
 
+    public function commands () {
+        return $this->hasMany(Command::class, 'client_mail');
+    }
+
     public function toDTO(): UserDTO
     {
         $userDTO = new UserDTO($this->email);
@@ -38,6 +43,11 @@ class User extends \Illuminate\Database\Eloquent\Model
         $userDTO->refresh_token_expiration_date = $this->refresh_token_expiration_date;
         $userDTO->reset_passwd_token = $this->reset_passwd_token;
         $userDTO->reset_passwd_token_expiration_date = $this->reset_passwd_token_expiration_date;
+        $commandsDTO = [];
+        foreach ($this->commands()->get() as $command) {
+            $commandsDTO [] = $command->toDTO();
+        };
+        $userDTO->commands = $commandsDTO;
         return $userDTO;
     }
 }
