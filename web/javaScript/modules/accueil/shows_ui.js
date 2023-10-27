@@ -31,7 +31,7 @@ class ShowsUI {
             show.date = show.date.charAt(0).toUpperCase() + show.date.slice(1);
 
             article.innerHTML = `
-            <a href="../../web/html/soireeDesc.html?id=${show.evening_id}">
+            <a href="../../web/html/soiree_desc.html?id=${show.evening_id}">
             <div class="article-content">
                 <h3>${show.title}</h3>
                 <p>${show.date}</p>

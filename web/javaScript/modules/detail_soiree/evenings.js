@@ -1,4 +1,5 @@
 import festivalLoader from "../../festivalLoader";
+import Evenings_ui from "./evenings_ui";
 
 class Evenings {
 
@@ -11,7 +12,7 @@ class Evenings {
         if (this.loading) return;
         festivalLoader.fetch_festival_api('/evening/' + id)
             .then(evening => {
-                console.log(evening);
+                Evenings_ui.render_evening(evening);
                 this.loading = false;
             })
             .catch(error => {
