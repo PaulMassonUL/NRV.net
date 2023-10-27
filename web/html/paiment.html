@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Admin - Soirée</title>
+  <link rel="stylesheet" href="../css/components/headerFotter.css">
+  <link rel="stylesheet" href="../css/pages/paiement.css">
+<body>
+
+<header>
+  <nav>
+    <img src="../img/NRV-Banniere2.png" alt="">
+    <ul>
+      <li><a href="./list_show.html"><img src="../img/NRV-Logo.png"
+                                          alt="bannière avec lieu et date de l'évenement"></a></li>
+      <li><a class="menu" href="./list_show.html">Shows</a></li>
+      <li><a class="menu" href="./billets.html">Mes billets</a></li>
+      <li><a class="menu" href="./panier.html">Panier</a></li>
+      <li><a class="menu" href="./compte.html">Mon compte</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+  <div class="credit-card-form-container">
+    <div class="credit-card">
+      <div class="card-inner">
+        <div class="card-front">
+          <div class="strip"></div>
+          <div class="chip"></div>
+          <div class="card-number">1234 5678 9012 3456</div>
+          <div class="card-holder">John Doe</div>
+          <div class="card-expiry">12/25</div>
+        </div>
+        <div class="card-back">
+          <div class="magnetic-stripe"></div>
+          <div class="signature"></div>
+          <div class="ccv">123</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-container">
+      <h2>Entrez les détails de la carte :</h2>
+      <form id="card-form">
+        <div class="form-input">
+          <label for="card-number">Numéro de carte</label>
+          <input type="text" id="card-number" placeholder="1234 5678 9012 3456">
+        </div>
+        <div class="form-input">
+          <label for="card-name">Nom du titulaire</label>
+          <input type="text" id="card-name" placeholder="John Doe">
+        </div>
+        <div class="form-input">
+          <label for="card-expiry">Date d'expiration (MM/YYYY)</label>
+          <input type="text" id="card-expiry" placeholder="12/25">
+        </div>
+        <div class="form-input">
+          <label for="card-ccv">CCV</label>
+          <input type="text" id="card-ccv" placeholder="123">
+        </div>
+        <button type="button">Payer</button>
+      </form>
+    </div>
+  </div>
+
+
+</main>
+
+
+<footer>
+  <nav>
+    <ul>
+      <li><a href="./list_show.html">Shows</a></li>
+      <li><a href="./billets.html">Mes billets</a></li>
+      <li><a href="./panier.html">Panier</a></li>
+    </ul>
+  </nav>
+</footer>
+
+<script src="../javaScript/modules/paiement.js"></script>
+</body>
+</html>
