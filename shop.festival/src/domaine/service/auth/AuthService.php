@@ -51,7 +51,7 @@ class AuthService implements iAuth
         try {
             $this->authProvider->checkCredentials($c->email, $c->password);
         } catch (AuthProviderInvalidCredentialsException) {
-            throw new AuthServiceCredentialsException("Invalid credentials");
+            throw new AuthServiceCredentialsException("Invalid credentials: " . $c->email . " " . $c->password);
         }
         $user = $this->authProvider->getAuthenticatedUser();
 

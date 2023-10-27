@@ -19,10 +19,9 @@ class Cors
         }
 
         $response = $next->handle($rq);
-        return $response
-            ->withHeader('Access-Control-Allow-Origin', '*')
-            ->withHeader('Access-Control-Allow-Headers', 'Content-Type, Accept, Origin, Authorization')
-            ->withHeader('Access-Control-Allow-Methods', 'GET, POST, PATCH, OPTIONS')
+        return $response->withHeader('Access-Control-Allow-Origin', $rq->getHeaderLine('Origin'))
+            ->withHeader('Access-Control-Allow-Headers', $rq->getHeaderLine('Access-Control-Request-Headers'))
+            ->withHeader('Access-Control-Allow-Methods', $rq->getHeaderLine('Access-Control-Request-Method'))
             ->withHeader('Access-Control-Max-Age', 3600)
             ->withHeader('Access-Control-Allow-Credentials', 'true');
     }

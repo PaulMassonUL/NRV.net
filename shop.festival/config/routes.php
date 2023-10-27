@@ -19,6 +19,10 @@ return function (\Slim\App $app) {
 
     $JwtVerification = new Jwt($app->getContainer()->get('AuthService'));
 
+    $app->options('/{routes:.+}', function ($response) {
+        return $response;
+    });
+
     $app->get('/shows[/]', GetShowsAction::class)->setName('getShows');
 
     $app->get('/evening/{id}[/]', GetEveningByIdAction::class)->setName('getEveningById');
