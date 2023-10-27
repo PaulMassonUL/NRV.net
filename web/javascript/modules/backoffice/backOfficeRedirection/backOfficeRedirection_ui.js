@@ -19,9 +19,11 @@ class backOfficeRedirection_ui {
 
             article.innerHTML = `
             <h3>${date}</h3>
-        </article>
             `;
-
+            article.addEventListener('click', function() {
+                // Redirigez l'utilisateur vers backoff_jauge.html
+                window.location.href = 'backoff_jauge.html';
+            });
             backOffRedirection.appendChild(article);
         });
     }
