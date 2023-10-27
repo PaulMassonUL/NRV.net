@@ -93,6 +93,7 @@ CREATE TABLE `Ticket` (
                           `client_email` varchar(128) NOT NULL,
                           `evening_id` int(11) NOT NULL,
                           `id_command` varchar(64) NOT NULL,
+                          `price` int(11) NOT NULL,
                           PRIMARY KEY (`id`),
                           KEY `client_email` (`client_email`),
                           KEY `evening_id` (`evening_id`)
@@ -119,4 +120,4 @@ CREATE TABLE `User` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
 
 
--- 2023-10-27 10:39:28
+-- 2023-10-27 16:10:57
