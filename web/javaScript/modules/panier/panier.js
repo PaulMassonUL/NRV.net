@@ -7,6 +7,8 @@ class Panier {
         this.cart = JSON.parse(localStorage.getItem('cart')) || [];
     }
 
+
+
     add_evening_to_panier(evening) {
         this.cart.push(evening.evening.id);
         localStorage.setItem('cart', JSON.stringify(this.cart));

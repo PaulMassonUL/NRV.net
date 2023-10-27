@@ -18,6 +18,7 @@
 # User-specific stuff
 .idea/
 
+*.css
 
 ##### Composer
 **/composer.phar

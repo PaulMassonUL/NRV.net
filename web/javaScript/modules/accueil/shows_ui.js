@@ -1,5 +1,4 @@
 import Shows from "./shows";
-import Evenings from "../detail_soiree/evenings";
 
 class ShowsUI {
 
