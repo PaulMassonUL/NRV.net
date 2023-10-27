@@ -7,9 +7,12 @@ use festochshop\shop\app\action\shop\GetAllDatesEveningAction;
 use festochshop\shop\app\action\shop\GetAllNameSpotsAction;
 use festochshop\shop\app\action\shop\GetAllSpotsAction;
 use festochshop\shop\app\action\shop\GetAllThematicAction;
+use festochshop\shop\app\action\shop\GetCommandAction;
 use festochshop\shop\app\action\shop\GetEveningByIdAction;
 use festochshop\shop\app\action\shop\GetNbPlaceAction;
 use festochshop\shop\app\action\shop\GetShowsAction;
+use festochshop\shop\app\action\shop\PatchValiderCommandeAction;
+use festochshop\shop\app\action\shop\PostCreerCommandeAction;
 use Psr\Container\ContainerInterface;
 
 return [
@@ -54,12 +57,15 @@ return [
         return new PostRefreshAction($container->get('AuthService'));
     },
 
-    \festochshop\shop\app\action\shop\GetCommandAction::class => function (ContainerInterface $container) {
-    return new \festochshop\shop\app\action\shop\GetCommandAction($container->get('CommandService'));
+    GetCommandAction::class => function (ContainerInterface $container) {
+    return new GetCommandAction($container->get('CommandService'));
     },
 
-    \festochshop\shop\app\action\shop\PostCreerCommandeAction::class => function(ContainerInterface $container) {
-    return new \festochshop\shop\app\action\shop\PostCreerCommandeAction($container->get('CommandService'));
+    PostCreerCommandeAction::class => function(ContainerInterface $container) {
+    return new PostCreerCommandeAction($container->get('CommandService'));
+    },
+    PatchValiderCommandeAction::class => function(ContainerInterface $container) {
+        return new PatchValiderCommandeAction($container->get('CommandService'));
     }
 
 ];

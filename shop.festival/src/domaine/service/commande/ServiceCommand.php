@@ -69,6 +69,21 @@ class ServiceCommand implements iCommand
 
     public function validerCommande(string $idCommande): CommandDTO
     {
-        // TODO: Implement validerCommande() method.
+        try {
+            $commande = Command::where('id', $idCommande)->firstOrFail();
+        } catch (ModelNotFoundException $e) {
+            throw new ServiceCommandeInvalidException("Commande inexistante",404);
+        }
+
+        if ($commande->etat >= Command::ETAT_VALIDE) {
+            throw new ServiceCommandeInvalidException("Commande déjà validée",400);
+        }
+
+        $commande->etat = Command::ETAT_VALIDE;
+        $commande->save();
+
+        $this->logger->info('CommandeServiceLogger: CommandeService: Commande validée');
+
+        return $commande->toDTO();
     }
 }

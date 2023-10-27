@@ -12,6 +12,7 @@ use festochshop\shop\app\action\shop\GetAllThematicAction;
 use festochshop\shop\app\action\shop\GetEveningByIdAction;
 use festochshop\shop\app\action\shop\GetNbPlaceAction;
 use festochshop\shop\app\action\shop\GetShowsAction;
+use festochshop\shop\app\action\shop\PatchValiderCommandeAction;
 use festochshop\shop\domaine\middlewares\Jwt;
 
 return function (\Slim\App $app) {
@@ -35,6 +36,8 @@ return function (\Slim\App $app) {
     $app->get('/command/{id}[/]', \festochshop\shop\app\action\shop\GetCommandAction::class);
 
     $app->post('/commands[/]', \festochshop\shop\app\action\shop\PostCreerCommandeAction::class);
+
+    $app->patch('/commands/{id_command}[/]', PatchValiderCommandeAction::class)->setName('patch_commandes');
 
     // exemple pour ajouter le controle du middleware sur une route :
     //     $app->get('/maroute', MaClasse::class)->setName('name')->add($JwtVerification);
