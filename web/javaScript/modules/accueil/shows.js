@@ -1,4 +1,4 @@
-import festivalLoader from '../festivalLoader.js';
+import festivalLoader from '../../festivalLoader.js';
 import Shows_ui from "./shows_ui";
 
 class Shows {
@@ -104,6 +104,7 @@ class Shows {
             });
         this.loading = true;
     }
+
 
 }
 
