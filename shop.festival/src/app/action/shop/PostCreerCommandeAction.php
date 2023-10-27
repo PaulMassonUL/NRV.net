@@ -36,7 +36,6 @@ class PostCreerCommandeAction
                             $ticket['barcode'],
                             $ticket['client_email'],
                             $ticket['evening_id'],
-                            $ticket['id_command'],
                             $ticket['price'],
                         ),
                         $data['tickets']
