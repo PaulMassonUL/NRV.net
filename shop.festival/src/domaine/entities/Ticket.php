@@ -31,7 +31,7 @@ class Ticket extends Model
 
     public function toDTO()
     {
-        $ticketDT0 = new TicketDTO($this->date, $this->barcode, $this->client_email, $this->evening_id,  $this->id_command, $this->price);
+        $ticketDT0 = new TicketDTO($this->date, $this->barcode, $this->client_email, $this->evening_id, $this->price);
         $ticketDT0->id = $this->id;
         return $ticketDT0;
     }

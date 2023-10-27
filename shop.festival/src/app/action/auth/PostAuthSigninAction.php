@@ -9,6 +9,7 @@ use festochshop\shop\domaine\service\auth\iAuth;
 use Psr\Http\Message\ResponseInterface as Response;
 use Psr\Http\Message\ServerRequestInterface as Request;
 use Slim\Exception\HttpBadRequestException;
+use Slim\Exception\HttpUnauthorizedException;
 
 class PostAuthSigninAction extends Action
 {
@@ -38,7 +39,7 @@ class PostAuthSigninAction extends Action
 
             return $rs->withStatus(201);
         } catch (AuthServiceCredentialsException $e) {
-            throw new HttpBadRequestException($rq, $e->getMessage());
+            throw new HttpUnauthorizedException($rq, $e->getMessage());
         }
     }
 

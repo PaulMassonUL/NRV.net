@@ -14,12 +14,11 @@ class TicketDTO extends Model
     public string $id_command;
     public int $price;
 
-    public function __construct (string $date, string $barcode, string $client_email, int $evening_id, string $id_command, int $price) {
+    public function __construct (string $date, string $barcode, string $client_email, int $evening_id, int $price) {
         $this->date = $date;
         $this->barcode = $barcode;
         $this->client_email = $client_email;
         $this->evening_id = $evening_id;
-        $this->id_command = $id_command;
         $this->price = $price;
     }
 
@@ -31,7 +30,6 @@ class TicketDTO extends Model
             'barcode' => $this->barcode,
             'client_mail' => $this->client_email,
             'evening_id' => $this->evening_id,
-            'id_command' => $this->id_command,
             'price' => $this->price
         ];
     }
