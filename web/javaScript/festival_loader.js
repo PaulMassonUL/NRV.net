@@ -1,4 +1,4 @@
-class festivalLoader{
+class festival_loader {
 
     fetch_festival_api(url, options){
         return fetch('http://docketu.iutnc.univ-lorraine.fr:11110' + url, options)
@@ -12,4 +12,4 @@ class festivalLoader{
     }
 }
 
-export default new festivalLoader();
+export default new festival_loader();

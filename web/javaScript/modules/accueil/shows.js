@@ -1,4 +1,4 @@
-import festivalLoader from '../../festivalLoader.js';
+import festivalLoader from '../../festival_loader.js';
 import Shows_ui from "./shows_ui";
 
 class Shows {

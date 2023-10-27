@@ -1,4 +1,4 @@
-import festivalLoader from "../../festivalLoader";
+import festivalLoader from "../../festival_loader";
 import Evenings_ui from "./evenings_ui";
 
 class Evenings {

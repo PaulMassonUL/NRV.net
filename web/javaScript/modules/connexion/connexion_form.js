@@ -1,4 +1,4 @@
-import festivalLoader from '../../festivalLoader.js';
+import festivalLoader from '../../festival_loader.js';
 
 class ConnexionForm {
 
