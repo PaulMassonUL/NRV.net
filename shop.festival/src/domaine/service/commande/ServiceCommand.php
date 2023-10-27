@@ -86,4 +86,18 @@ class ServiceCommand implements iCommand
 
         return $commande->toDTO();
     }
+
+    public function getAllCommandsByUser(string $mail): array
+    {
+        try {
+            $commands = Command::where('client_mail', $mail)->get();
+            $commandsDTO = [];
+            foreach ($commands as $command) {
+                $commandsDTO [] = $command->toDTO();
+            }
+            return$commandsDTO;
+        } catch (ModelNotFoundException $e) {
+            throw new ServiceCommandeNotFoundException("User inexistante");
+        }
+    }
 }

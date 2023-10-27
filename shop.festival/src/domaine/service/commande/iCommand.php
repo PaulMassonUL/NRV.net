@@ -9,4 +9,5 @@ interface iCommand
     public function creerCommande(CommandDTO $commandeDTO): CommandDTO;
     public function accederCommande(string $idCommande): CommandDTO;
     public function validerCommande(string $idCommande): CommandDTO;
+    public function getAllCommandsByUser(string $mail): array;
 }

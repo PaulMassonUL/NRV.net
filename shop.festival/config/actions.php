@@ -8,6 +8,7 @@ use festochshop\shop\app\action\shop\GetAllNameSpotsAction;
 use festochshop\shop\app\action\shop\GetAllSpotsAction;
 use festochshop\shop\app\action\shop\GetAllThematicAction;
 use festochshop\shop\app\action\shop\GetCommandAction;
+use festochshop\shop\app\action\shop\GetCommandByUser;
 use festochshop\shop\app\action\shop\GetEveningByIdAction;
 use festochshop\shop\app\action\shop\GetNbPlaceAction;
 use festochshop\shop\app\action\shop\GetShowsAction;
@@ -66,6 +67,9 @@ return [
     },
     PatchValiderCommandeAction::class => function(ContainerInterface $container) {
         return new PatchValiderCommandeAction($container->get('CommandService'));
+    },
+    GetCommandByUser::class => function(ContainerInterface $container) {
+    return new GetCommandByUser($container->get('UserService'));
     }
 
 ];

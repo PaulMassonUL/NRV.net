@@ -37,6 +37,9 @@ return [
 
     'CommandService' => function(\DI\Container $c) {
         return new \festochshop\shop\domaine\service\commande\ServiceCommand($c->get('logger'));
+    },
+    'UserService' => function(\Psr\Container\ContainerInterface $c) {
+    return new \festochshop\shop\domaine\service\commande\ServiceCommand($c->get('logger'));
     }
 
 ];

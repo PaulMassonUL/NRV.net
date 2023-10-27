@@ -43,6 +43,8 @@ return function (\Slim\App $app) {
 
     $app->patch('/commands/{id_command}[/]', PatchValiderCommandeAction::class)->setName('patch_commandes');
 
+    $app->get('/user/commands/{mail_client}[/]', \festochshop\shop\app\action\shop\GetCommandByUser::class)->setName('commandsUser');
+
     // exemple pour ajouter le controle du middleware sur une route :
     //     $app->get('/maroute', MaClasse::class)->setName('name')->add($JwtVerification);
 
