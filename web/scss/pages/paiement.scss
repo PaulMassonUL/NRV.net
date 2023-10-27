@@ -110,8 +110,9 @@ h2 {
   margin: 0 0 20px;
 }
 
+
 .form-input {
-  margin: 0 0 15px;
+
 }
 
 label {
@@ -121,6 +122,7 @@ label {
 }
 
 input {
+  box-sizing: border-box;
   width: 100%;
   padding: 10px;
   border: 1px solid #ccc;
