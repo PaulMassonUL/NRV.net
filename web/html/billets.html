@@ -21,7 +21,7 @@
 </header>
 <main>
     <h1 class="title">Mes billets</h1>
-    <section class="card">
+    <section class="card" id="ticket-1">
         <article class="card-ticket">
             <div class="title-ticket">
                 <h2>Soirée mercredi 23 octobre</h2>
@@ -39,9 +39,9 @@
                 <p>Heure : 21h30</p>
             </div>
         </article>
-        <button class="button-green">Imprimer le billet</button>
+        <button class="button-green print-button" data-print="ticket-1">Imprimer le billet</button>
     </section>
-    <section class="card">
+    <section class="card" id="ticket-2">
         <article class="card-ticket">
             <div class="title-ticket">
                 <h2>Soirée mercredi 23 octobre</h2>
@@ -59,7 +59,7 @@
                 <p>Heure : 21h30</p>
             </div>
         </article>
-        <button class="button-green">Imprimer le billet</button>
+        <button class="button-green print-button" data-print="ticket-2">Imprimer le billet</button>
     </section>
 </main>
 
@@ -71,5 +71,7 @@
         </ul>
     </nav>
 </footer>
+
+<script src="../javaScript/print_ticket.js"></script>
 </body>
 </html>

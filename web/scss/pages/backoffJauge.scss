@@ -22,20 +22,28 @@ span {
 
 .min-value {
   @extend .col;
+  @extend .s2;
+  @extend .m2;
   @extend .l2;
+  @extend .xl2;
   text-align: left;
 }
 
 .max-value {
   color: #F83A3E;
   @extend .col;
+  @extend .s2;
+  @extend .m2;
   @extend .l2;
-  text-align: right;
+  @extend .xl2;  text-align: right;
 }
 
 .value {
   @extend .col;
+  @extend .s8;
+  @extend .m8;
   @extend .l8;
+  @extend .xl8;
   text-align: center;
 }
 
@@ -45,6 +53,9 @@ span {
 
 .progress-bar {
   @extend .col;
+  @extend .s12;
+  @extend .m12;
   @extend .l12;
+  @extend .xl12;
   height: 50px;
 }
