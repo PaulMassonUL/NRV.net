@@ -1,4 +1,4 @@
-import shows from "./modules/shows.js";
+import shows from "./modules/accueil/shows.js";
 
 document.addEventListener('DOMContentLoaded', () => {
 
