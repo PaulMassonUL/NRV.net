@@ -65,7 +65,7 @@ $columnWidth: (100% - (($nbGutters * $gutterWidth))) / $nbColumns;
       flex-basis: $x * $columnWidth + ($x - 1) * $gutterWidth;
 
     }
-    .offset-l#{$x} {
+    .offset-xl#{$x} {
       margin-left: $x * $columnWidth + ($x + 1) * $gutterWidth;
     }
   }
