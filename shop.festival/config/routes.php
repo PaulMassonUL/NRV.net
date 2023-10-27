@@ -36,7 +36,6 @@ return function (\Slim\App $app) {
     //     $app->get('/maroute', MaClasse::class)->setName('name')->add($JwtVerification);
 
 
-
     // AUTH
 
     $app->post('/auth/signin[/]', PostAuthSigninAction::class)->setName('postAuthSignin');

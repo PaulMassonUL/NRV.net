@@ -2,7 +2,7 @@
 
 use DI\ContainerBuilder;
 use festochshop\shop\domaine\middlewares\Cors;
-use festochshop\shop\domaine\middlewares\Jwt;
+use festochshop\shop\domaine\middlewares\Preflight;
 use Illuminate\Database\Capsule\Manager;
 use Slim\Factory\AppFactory;
 
@@ -12,11 +12,15 @@ $builder->addDefinitions(__DIR__ . '/settings.php');
 $builder->addDefinitions(__DIR__ . '/services_dependencies.php');
 $builder->addDefinitions(__DIR__ . '/actions.php');
 
-$c=$builder->build();
+$c = $builder->build();
 
 $app = AppFactory::createFromContainer($c);
 
+// gestion des requetes simples
 $app->add(new Cors());
+
+// gestion des requetes controlees avec pre flight
+$app->options('/{routes:.+}', Preflight::class);
 
 $app->addRoutingMiddleware();
 $app->addBodyParsingMiddleware();
