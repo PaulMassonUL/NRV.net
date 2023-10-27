@@ -5,6 +5,7 @@
 
 .card {
   margin: 30px;
+
   .tickets {
     @extend .row;
 
@@ -13,7 +14,10 @@
       @extend .s12;
       @extend .m12;
       @extend .l6;
+      @extend .xl6;
 
+      box-shadow: 0 0 14px 5px lighten(black, 60%);
+      padding: 20px;
       border-radius: 10px;
       background-color: rgba(248, 58, 62, 0.5);
       margin-top: 20px;
@@ -27,6 +31,8 @@
       @extend .m6;
       @extend .offset-l3;
       @extend .l6;
+      @extend .offset-xl3;
+      @extend .xl6;
 
       font-weight: bold;
       margin-top: 20px;
