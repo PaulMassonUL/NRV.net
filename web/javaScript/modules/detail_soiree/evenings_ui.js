@@ -21,15 +21,15 @@ class Evenings_ui {
         let dateHour = dateOrigin.toLocaleTimeString('fr-FR', { hour: '2-digit', minute: '2-digit' });
 
         eveningArticle1.innerHTML = `
-            <p>${date}</p>
-            <p>${dateHour}</p>
-            <p>${evening.evening.name}</p>
+            <p><span class="underline">${date}</span></p>
+            <p><span class="underline">${dateHour}</span></p>
+            <p><span class="underline">${evening.evening.spot.name}</span></p>
         `;
 
         eveningArticle2.innerHTML = `
             <p>${evening.evening.thematic}</p>
-            <p>Tarif ${evening.evening.price}€</p>
-            <p>Tarif réduit ${evening.evening.reduced_price}€</p>
+            <p>Tarif : ${evening.evening.price}€</p>
+            <p>Tarif réduit : ${evening.evening.reduced_price}€</p>
         `;
 
         eveningDesc.appendChild(eveningArticle1);
@@ -52,9 +52,8 @@ class Evenings_ui {
             article.classList.add('showDescription');
             article.innerHTML = `
                 <h2>${show.title}</h2>
-                <p>${artistNamesString}</p>
-                <p>${evening.evening.thematic}</p>
-                <p>${show.description}</p>
+                <p>${artistNamesString} - ${evening.evening.thematic}</p>
+                <p class="description">${show.description}</p>
             `;
             showSection.appendChild(article);
             const div = document.createElement('div');
