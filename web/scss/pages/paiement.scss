@@ -7,6 +7,10 @@
   height: 100vh;
   background-color: #f0f0f0;
 
+  @media screen and (max-width: 800px) {
+    flex-direction: column;
+  }
+
 }
 
 .credit-card {
@@ -91,6 +95,11 @@
   width: 350px;
   position: relative;
 
+  @media screen and (max-width: 800px) {
+    margin-top: 60px;
+
+  }
+
   &::before {
     content: '';
     position: absolute;
@@ -112,6 +121,8 @@ h2 {
 
 
 .form-input {
+
+  margin: 20px 0;
 
 }
 

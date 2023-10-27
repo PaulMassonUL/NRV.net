@@ -7,6 +7,10 @@ main {
 
   & > .eveningDescription {
     width: 80%;
+
+    @media screen and (max-width: 600px) {
+        width: 90%;
+    }
     margin: 0 auto;
     display: grid;
     grid-template-columns: repeat(12, 1fr);
@@ -64,6 +68,14 @@ main {
 
   .show {
     width: 90%;
+
+    @media screen and (max-width: 600px) {
+      width: 100%;
+      margin: 50px auto;
+      padding: initial;
+      border-top: 4px solid rgb(248, 58, 62);
+    }
+
     margin: 100px auto;
     padding: 30px;
     display: grid;
@@ -71,11 +83,29 @@ main {
     grid-gap: 2.7%;
 
     & > .showDescription {
-      grid-column: 1/6;
+
+      @media screen and (max-width: 600px) {
+        grid-column: 1/13;
+        padding-right: 0;
+      }
+
+      @media screen and (min-width: 600px) {
+        grid-column: 1/6;
+
+      }
+
     }
 
     & > .video {
-      grid-column: 7/13;
+      @media screen and (max-width: 600px) {
+        grid-column: 1 / 13;
+        margin-top: 50px;
+      }
+
+      @media screen and (min-width: 600px) {
+        grid-column: 7 / 13;
+
+      }
 
       video {
         width: 100%;
@@ -91,8 +121,12 @@ main {
 
     .show {
       .showDescription {
-        padding-right: 30px;
-        border-right: 4px solid rgb(248, 58, 62);
+
+        @media screen and (min-width: 601px) {
+          border-right: 4px solid rgb(248, 58, 62);
+          padding-right: 30px;
+
+        }
 
         h2 {
           text-transform: uppercase;
