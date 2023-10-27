@@ -16,7 +16,7 @@ main {
     & > article:first-child {
       grid-column: 1 / 7;
       text-align: right;
-      border-right: 4px solid rgba(248, 58, 62);
+      border-right: 4px solid rgb(248, 58, 62);
       text-transform: uppercase;
       padding-right: 20px;
 
@@ -92,11 +92,11 @@ main {
     .show {
       .showDescription {
         padding-right: 30px;
-        border-right: 4px solid rgba(248, 58, 62);
+        border-right: 4px solid rgb(248, 58, 62);
 
         h2 {
           text-transform: uppercase;
-          color: rgba(248, 58, 62);
+          color: rgb(248, 58, 62);
         }
 
         p:first-of-type {
