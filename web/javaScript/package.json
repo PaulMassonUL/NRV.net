@@ -1,9 +1,8 @@
 {
   "dependencies": {
-    "esbuild": "^0.18.1",
-    "showdown": "^2.1.0"
+    "esbuild": "^0.18.1"
   },
   "scripts": {
-    "build-accueil": "esbuild accueil.js detail_soiree.js --bundle --minify --outdir=dist"
+    "build": "esbuild accueil.js detail_soiree.js --bundle --minify --outdir=dist"
   }
 }
