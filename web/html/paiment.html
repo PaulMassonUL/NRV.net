@@ -28,14 +28,14 @@
         <div class="card-front">
           <div class="strip"></div>
           <div class="chip"></div>
-          <div class="card-number">1234 5678 9012 3456</div>
-          <div class="card-holder">John Doe</div>
-          <div class="card-expiry">12/25</div>
+          <div class="card-number">**** **** **** ****</div>
+          <div class="card-holder">Prénom NOM</div>
+          <div class="card-expiry">MM/YYYY</div>
         </div>
         <div class="card-back">
           <div class="magnetic-stripe"></div>
           <div class="signature"></div>
-          <div class="ccv">123</div>
+          <div class="ccv">CCV</div>
         </div>
       </div>
     </div>
@@ -45,19 +45,19 @@
       <form id="card-form">
         <div class="form-input">
           <label for="card-number">Numéro de carte</label>
-          <input type="text" id="card-number" placeholder="1234 5678 9012 3456">
+          <input type="text" id="card-number" placeholder="**** **** **** ****">
         </div>
         <div class="form-input">
           <label for="card-name">Nom du titulaire</label>
-          <input type="text" id="card-name" placeholder="John Doe">
+          <input type="text" id="card-name" placeholder="Prénom NOM">
         </div>
         <div class="form-input">
-          <label for="card-expiry">Date d'expiration (MM/YYYY)</label>
-          <input type="text" id="card-expiry" placeholder="12/25">
+          <label for="card-expiry">Date d'expiration</label>
+          <input type="text" id="card-expiry" placeholder="MM/YYYY">
         </div>
         <div class="form-input">
           <label for="card-ccv">CCV</label>
-          <input type="text" id="card-ccv" placeholder="123">
+          <input type="text" id="card-ccv" placeholder="CCV">
         </div>
         <button class="button button-green" type="button">Payer</button>
       </form>

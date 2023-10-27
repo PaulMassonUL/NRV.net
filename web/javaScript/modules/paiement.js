@@ -24,8 +24,6 @@ cardName.addEventListener('input', updateCardDetails);
 cardExpiry.addEventListener('input', updateCardDetails);
 cardCCV.addEventListener('input', updateCardDetails);
 
-//cardCCV.addEventListener('focus', rotateCardRight);
-
 cardCCV.addEventListener('focus', () => {
     rotateCard();
 });
