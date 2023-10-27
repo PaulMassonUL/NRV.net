@@ -10,7 +10,7 @@ services:
     image: 'canals/php:latest'
     env_file: ./shop.env
     ports:
-      - '2080:80'
+      - '11110:80'
     volumes:
       - ../shop.festival/public:/var/www/html
       - ../shop.festival:/var/www
