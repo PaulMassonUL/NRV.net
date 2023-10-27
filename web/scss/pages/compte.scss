@@ -8,35 +8,25 @@
 }
 
 .card-account {
-  @extend .row;
-
+  display: flex;
+  justify-content: space-around;
   width: 80%;
   margin: 40px auto;
 
   .card-account-details {
-    @extend .col;
-    @extend .l6;
-    @extend .m12;
-    @extend .s12;
     @extend .card;
 
     .title {
       text-align: center;
-      margin-bottom: 25px;
     }
   }
 
   .card-account-last-commande {
-    @extend .col;
-    @extend .l6;
-    @extend .m12;
-    @extend .s12;
     @extend .card;
     text-align: center;
 
     .title {
       text-align: center;
-      margin-bottom: 25px;
     }
 
     img {
