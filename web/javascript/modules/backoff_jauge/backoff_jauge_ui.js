@@ -21,3 +21,5 @@ class Backoff_jauge_ui {
         // placesContainer.appendChild(article);
     }
 }
+
+export default new Backoff_jauge_ui();

@@ -12,4 +12,7 @@ class festival_loader {
     }
 }
 
+//url to server ent : http://docketu.iutnc.univ-lorraine.fr:11110
+//url to localhost : http://localhost:11110
+
 export default new festival_loader();

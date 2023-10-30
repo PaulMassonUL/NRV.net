@@ -1,5 +1,5 @@
 import festival_loader from "../../festival_loader";
-import backoff_jauge_ui from "./backoff_jauge_ui";
+import Backoff_jauge_ui from "./backoff_jauge_ui";
 
 class Backoff_jauge {
 
@@ -18,10 +18,12 @@ class Backoff_jauge {
             festival_loader.fetch_festival_api('/places/1')
                 .then(places => {
                     this.places = places;
-                    backoff_jauge_ui.render_places(this.places);
+                    Backoff_jauge_ui.render_places(this.places);
                 });
         } else {
-            backoff_jauge_ui.render_places(this.places);
+            Backoff_jauge_ui.render_places(this.places);
         }
     }
 }
+
+export default new Backoff_jauge();
