@@ -11,7 +11,8 @@
     <nav>
         <img src="../img/NRV-Banniere2.png" alt="">
         <ul>
-            <li><a href="./list_show.html"><img src="../img/NRV-Logo.png" alt="bannière avec lieu et date de l'évenement"></a></li>
+            <li><a href="./list_show.html"><img src="../img/NRV-Logo.png"
+                                                alt="bannière avec lieu et date de l'évenement"></a></li>
             <li><a class="menu" href="./list_show.html">Spectacles</a></li>
             <li><a class="menu" href="./panier.html">Panier</a></li>
             <li><a class="menu" href="./compte.html">Mon compte</a></li>
@@ -20,13 +21,43 @@
 </header>
 
 <main>
-    <h1 class="text-connexion">Connexion</h1>
-    <section id="card-login" class="card-login">
-        <input class="input-login" type="email" name="email" id="email" placeholder="Email">
-        <input class="input-login" type="password" name="password" id="password" placeholder="Mot de passe">
-        <button id="button-connexion" class="button-connexion">Se connecter</button>
-        <p>Pas encore inscrit ? <a href="./inscription.html">Inscrivez-vous</a></p>
-    </section>
+    <div class="container" id="container">
+        <div class="form-container sign-up">
+            <form>
+                <h1>Créer un compte</h1>
+                <input type="text" placeholder="Nom de famille">
+                <input type="text" placeholder="Prénom">
+                <input type="text" placeholder="Email">
+                <input type="text" placeholder="Mot de passe">
+                <input type="text" placeholder="Confirmer mot de passe">
+                <button class="button-register">Inscrivez-vous</button>
+            </form>
+        </div>
+        <div class="form-container sign-in">
+            <form>
+                <h1>Se connecter</h1>
+                <input type="text" placeholder="Email">
+                <input type="text" placeholder="Mot de passe">
+                <button class="login">Connexion</button>
+            </form>
+        </div>
+
+        <div class="toggle-container">
+            <div class="toggle">
+                <div class="toggle-pannel toggle-left">
+                    <h1>Vous avez déjà un compte ?</h1>
+                    <p>Entrez vos coordonnées personnelles et reprennez votre voyage.</p>
+                    <button class="hiden" id="login">Se connecter</button>
+                </div>
+                <div class="toggle-pannel toggle-right">
+                    <h1>Salut et bienvenue chez NRV !</h1>
+                    <p>Entrez vos coordonnées personnelles et commencez votre voyage avec nous !</p>
+                    <button class="hiden" id="register">S'inscrire</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
 </main>
 
 <footer>
