@@ -13,7 +13,7 @@ return [
     },
 
     'ServiceEvening' => function (\Psr\Container\ContainerInterface $container) {
-        return new \festochshop\shop\domaine\service\evening\ServiceEvening($container->get('logger'));
+        return new \festochshop\shop\domaine\service\evening\ServiceUser($container->get('logger'));
     },
 
     'ServiceSpot' => function (\Psr\Container\ContainerInterface $container) {
@@ -39,7 +39,7 @@ return [
         return new \festochshop\shop\domaine\service\commande\ServiceCommand($c->get('logger'));
     },
     'UserService' => function(\Psr\Container\ContainerInterface $c) {
-    return new \festochshop\shop\domaine\service\commande\ServiceCommand($c->get('logger'));
+    return new \festochshop\shop\domaine\service\user\ServiceUser($c->get('logger'));
     }
 
 ];
