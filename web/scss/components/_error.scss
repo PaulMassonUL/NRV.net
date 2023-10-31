@@ -1,5 +1,6 @@
 .error {
-  background-color: #F83A3E;
+  &.active {
+    background-color: #F83A3E;
     color: #fff;
     border-color: #F83A3E;
     padding: 10px;
@@ -10,10 +11,11 @@
     display: block;
     transition: all 0.4s ease-in-out;
 
-  &:hover {
-    background-color: #fff;
-    color: #F83A3E;
-    border-color: #F83A3E;
-    cursor: pointer;
+    &:hover {
+      background-color: #fff;
+      color: #F83A3E;
+      border-color: #F83A3E;
+      cursor: pointer;
+    }
   }
 }

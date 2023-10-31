@@ -6,7 +6,7 @@ class ConnexionForm {
         const button = document.getElementById("signin-button");
         button.addEventListener('click', () => {
             button.disabled = true;
-            const main = document.getElementsByTagName("main")[0];
+            const error = document.getElementsByClassName("error");
             const form = document.getElementById("signin-form");
             const email = form.querySelector("#signin-email").value;
             const password = form.querySelector("#signin-password").value;
@@ -27,7 +27,7 @@ class ConnexionForm {
                 .catch(() => {
                     button.disabled = false;
                     // afficher l'erreur
-                    main.innerHTML = '<p class="error">Erreur de connexion : les informations fournies ne nous on pas permis de vous authentifier</p>';
+                    error.innerHTML = '<p class="error active">Erreur de connexion : les informations fournies ne nous on pas permis de vous authentifier</p>';
                 });
         });
     }
