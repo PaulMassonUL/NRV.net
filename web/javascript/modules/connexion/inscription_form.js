@@ -53,6 +53,7 @@ class InscriptionForm {
                     button.disabled = false;
                     // afficher l'erreur
                     errorDiv.innerHTML = '<p class="error">Cette adresse e-mail est déjà utilisée</p>';
+                    errorDiv.classList.add('active');
                 });
         });
     }
