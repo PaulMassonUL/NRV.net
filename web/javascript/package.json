@@ -3,6 +3,6 @@
     "esbuild": "^0.18.1"
   },
   "scripts": {
-    "build": "esbuild accueil.js detail_panier.js detail_soiree.js connexion.js backofficeredirection.js paiement.js --bundle --minify --outdir=dist"
+    "build": "esbuild accueil.js backoff_jauge.js backofficeredirection.js compte.js connexion.js detail_panier.js detail_soiree.js paiement.js print_ticket.js --bundle --minify --outdir=dist"
   }
 }
