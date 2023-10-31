@@ -45,6 +45,8 @@ return function (\Slim\App $app) {
 
     $app->get('/user/commands/{mail_client}[/]', \festochshop\shop\app\action\shop\GetCommandByUser::class)->setName('commandsUser');
 
+    $app->get('/user[/]', \festochshop\shop\app\action\shop\GetUserAction::class)->setName('getUser')->add($JwtVerification);
+
     // exemple pour ajouter le controle du middleware sur une route :
     //     $app->get('/maroute', MaClasse::class)->setName('name')->add($JwtVerification);
 

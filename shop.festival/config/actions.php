@@ -12,6 +12,7 @@ use festochshop\shop\app\action\shop\GetCommandByUser;
 use festochshop\shop\app\action\shop\GetEveningByIdAction;
 use festochshop\shop\app\action\shop\GetNbPlaceAction;
 use festochshop\shop\app\action\shop\GetShowsAction;
+use festochshop\shop\app\action\shop\GetUserAction;
 use festochshop\shop\app\action\shop\PatchValiderCommandeAction;
 use festochshop\shop\app\action\shop\PostCreerCommandeAction;
 use Psr\Container\ContainerInterface;
@@ -70,6 +71,9 @@ return [
     },
     GetCommandByUser::class => function(ContainerInterface $container) {
     return new GetCommandByUser($container->get('UserService'));
-    }
+    },
+    GetUserAction::class => function(ContainerInterface $container) {
+    return new GetUserAction($container->get('AuthService'), $container->get('UserService'));
+    },
 
 ];
