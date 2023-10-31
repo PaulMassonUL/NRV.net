@@ -4,8 +4,6 @@ namespace festochshop\shop\app\action\shop;
 
 use festochshop\shop\domaine\service\commande\iCommand;
 use festochshop\shop\domaine\service\commande\ServiceCommandeNotFoundException;
-use festochshop\shop\domaine\service\evening\iServiceUser;
-use festochshop\shop\domaine\service\evening\ServiceUserNotFoundException;
 use Psr\Container\ContainerExceptionInterface;
 use Psr\Container\NotFoundExceptionInterface;
 use Psr\Http\Message\ResponseInterface as Response;

@@ -3,8 +3,8 @@
 namespace festochshop\shop\app\action\shop;
 
 use festochshop\shop\app\action\Action;
-use festochshop\shop\domaine\service\evening\iServiceUser;
-use festochshop\shop\domaine\service\evening\ServiceUserNotFoundException;
+use festochshop\shop\domaine\service\evening\iServiceEvening;
+use festochshop\shop\domaine\service\evening\ServiceEveningNotFoundException;
 use Psr\Http\Message\ResponseInterface as Response;
 use Psr\Http\Message\ServerRequestInterface as Request;
 
@@ -12,9 +12,9 @@ use Psr\Http\Message\ServerRequestInterface as Request;
 class GetAllDatesEveningAction extends Action
 {
 
-    private iServiceUser $serviceEvening;
+    private iServiceEvening $serviceEvening;
 
-    public function __construct(iServiceUser $serviceUser)
+    public function __construct(iServiceEvening $serviceUser)
     {
         $this->serviceEvening = $serviceUser;
     }
@@ -32,7 +32,7 @@ class GetAllDatesEveningAction extends Action
             $rs->getBody()->write(json_encode($data));
             return $rs->withHeader('Content-Type', 'application/json')->withStatus(200);
 
-        } catch (ServiceUserNotFoundException) {
+        } catch (ServiceEveningNotFoundException) {
             return $rs->withHeader('Content-Type', 'application/json')->withStatus(404);
         }
 
