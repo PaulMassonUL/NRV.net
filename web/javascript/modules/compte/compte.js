@@ -13,7 +13,6 @@ class Compte {
         festivalLoader.fetch_festival_api('/user/', options)
             .then(response => {
                 // récuperer les informations de l'utilisateur
-                console.log(response);
                 const firstname = document.getElementById("firstname");
                 const lastname = document.getElementById("lastname");
                 const email = document.getElementById("email");
