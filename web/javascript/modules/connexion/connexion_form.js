@@ -8,7 +8,6 @@ class ConnexionForm {
             button.disabled = true;
             const main = document.getElementsByTagName("main")[0];
             const form = document.getElementById("signin-form");
-            const errorDiv = form.getElementsByClassName("error")[0];
             const email = form.querySelector("#signin-email").value;
             const password = form.querySelector("#signin-password").value;
 
