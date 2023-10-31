@@ -34,21 +34,11 @@ class Panier_ui {
 
         divPanier.appendChild(article);
 
-        const recap = document.getElementsByClassName('recap')[0];
-        //modfier mon h2 présent dans recap
-        recap.innerHTML = `
+        const recapData = document.getElementsByClassName('data')[0];
+        recapData.innerHTML = `
         <h2>Récapitulatif</h2>
         <p>Total HT : ${this.total_ht.toFixed(2)}€</p>
         <p>Total TTC : ${this.total_ttc.toFixed(2)}€</p>
-        <button class="button button-green">Payer</button>
-        <div class="type-payment">
-                <h3>Nous accepetons :</h3>
-                <div class="logos">
-                    <img src="../img/icons/visa.png" alt="logo visa">
-                    <img src="../img/icons/mastercard.png" alt="logo mastercard">
-                    <img src="../img/icons/paypal.png" alt="logo paypal">
-                </div>
-            </div>
         `;
 
 
