@@ -22,7 +22,7 @@ class GetAllDatesEveningAction extends Action
     public function __invoke(Request $rq, Response $rs, array $args): Response
     {
         try {
-            $dates = $this->serviceEvening->getAllDates();
+            $dates = $this->serviceEvening->getAllDatesWithIdEvening();
 
             $data = [
                 'type' => 'resource',

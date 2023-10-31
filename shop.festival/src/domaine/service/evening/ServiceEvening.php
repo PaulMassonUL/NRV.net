@@ -65,12 +65,12 @@ class ServiceEvening implements iServiceEvening
         return $thematicsDTO;
     }
 
-    public function getAllDates(): array
+    public function getAllDatesWithIdEvening(): array
     {
-        $dates = Evening::select('date')->distinct()->get();
+        $dates = Evening::select('date', 'id')->distinct()->get();
         $datesDTO = [];
         foreach ($dates as $date) {
-            $datesDTO[] = $date->date;
+            $datesDTO[] = ['date' => $date->date, 'idEvening' => $date->id];
         }
         return $datesDTO;
     }

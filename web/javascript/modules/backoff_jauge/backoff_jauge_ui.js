@@ -1,31 +1,34 @@
 class Backoff_jauge_ui {
-    render_places(places) {
+    render_places(places, eveningDate) {
         const progressBarPlaceHTML = document.getElementById('progress-place');
         const placesMaxHTML = document.getElementById('max-value');
         const placesAvailableHTML = document.getElementById('places-available');
+        const textEvening = document.querySelector('.text-evening');
 
         const placesTotal = places.places.nbTotalPlaces;
         const placesSold = places.places.nbTicketSold;
         const placesAvailable = placesTotal - placesSold;
 
+        textEvening.innerHTML = `Soirée du ${this.formatDate(eveningDate)}`;
+        textEvening.value = eveningDate;
         progressBarPlaceHTML.setAttribute('value', placesSold);
+        progressBarPlaceHTML.setAttribute('max', placesTotal);
         placesMaxHTML.innerHTML = `${placesTotal}`;
         placesAvailableHTML.innerHTML = `${placesAvailable}`;
+    }
 
-        // Vérifiez si l'élément container existe
-        // if (!placesContainer) {
-        //     console.error("Le conteneur des places est introuvable.");
-        //     return;
-        // }
-        // //si placesContainer existe, on vide le contenu
-        // placesContainer.innerHTML = '';
-        //
-        // const article = document.createElement('article');
-        // article.innerHTML = `
-        //     <p>${places.places}</p>
-        // `;
-        //
-        // placesContainer.appendChild(article);
+    function
+
+    formatDate(inputDate) {
+        const date = new Date(inputDate);
+        const day = date.getDate().toString().padStart(2, '0');
+        const month = (date.getMonth() + 1).toString().padStart(2, '0');
+        const year = date.getFullYear();
+        const hours = date.getHours().toString().padStart(2, '0');
+        const minutes = date.getMinutes().toString().padStart(2, '0');
+
+        const formattedDate = `${day}.${month}.${year} / ${hours}h${minutes}`;
+        return formattedDate;
     }
 }
 

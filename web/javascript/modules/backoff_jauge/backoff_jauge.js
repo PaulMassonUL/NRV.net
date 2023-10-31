@@ -7,11 +7,14 @@ class Backoff_jauge {
         this.places = null;
     }
 
-    loadBackoff_jauge() {
-        festival_loader.fetch_festival_api('/places/1')
+    loadBackoff_jauge(eveningId, eveningDate) {
+        festival_loader.fetch_festival_api('/places/' + eveningId)
             .then(places => {
                 this.places = places;
-                Backoff_jauge_ui.render_places(this.places);
+                Backoff_jauge_ui.render_places(this.places, eveningDate);
+            })
+            .catch(error => {
+                console.error(error);
             });
     }
 }
