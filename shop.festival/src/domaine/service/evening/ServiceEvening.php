@@ -7,7 +7,7 @@ use festochshop\shop\domaine\dto\shop\EveningDTO;
 use festochshop\shop\domaine\entities\Evening;
 use Psr\Log\LoggerInterface;
 
-class ServiceUser implements iServiceUser
+class ServiceEvening implements iServiceEvening
 
 {
 
@@ -41,7 +41,7 @@ class ServiceUser implements iServiceUser
     }
 
     /**
-     * @throws ServiceUserNotFoundException
+     * @throws ServiceEveningNotFoundException
      */
     public function getEveningById(int $id): EveningDTO
     {
@@ -50,7 +50,7 @@ class ServiceUser implements iServiceUser
             $eveningDTO = $evening->toDTO();
         } catch (Exception $e) {
             $this->logger->error($e->getMessage());
-            throw new ServiceUserNotFoundException('Evening not found');
+            throw new ServiceEveningNotFoundException('Evening not found');
         }
         return $eveningDTO;
     }
