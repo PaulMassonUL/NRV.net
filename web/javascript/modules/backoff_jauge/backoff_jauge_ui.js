@@ -1,10 +1,19 @@
-import BackoffJauge from './backoff_jauge.js';
-
 class Backoff_jauge_ui {
     render_places(places) {
-        // const placesContainer = document.getElementsByClassName('backoff_jauge')[0];
+        const progressBarPlaceHTML = document.getElementById('progress-place');
+        const placesMaxHTML = document.getElementById('max-value');
+        const placesAvailableHTML = document.getElementById('places-available');
+
+        const placesTotal = places.places.nbTotalPlaces;
+        const placesSold = places.places.nbTicketSold;
+        const placesAvailable = placesTotal - placesSold;
+
+        progressBarPlaceHTML.setAttribute('value', placesSold);
+        placesMaxHTML.innerHTML = `${placesTotal}`;
+        placesAvailableHTML.innerHTML = `${placesAvailable}`;
 
         console.log(places);
+        console.log('test', placesAvailable);
         // Vérifiez si l'élément container existe
         // if (!placesContainer) {
         //     console.error("Le conteneur des places est introuvable.");
