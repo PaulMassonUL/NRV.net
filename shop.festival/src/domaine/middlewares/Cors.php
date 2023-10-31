@@ -1,8 +1,6 @@
 <?php
 
-
 namespace festochshop\shop\domaine\middlewares;
-
 
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;

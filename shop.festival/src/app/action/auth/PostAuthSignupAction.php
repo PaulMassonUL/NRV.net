@@ -8,7 +8,6 @@ use festochshop\shop\domaine\service\auth\AuthServiceCredentialsException;
 use festochshop\shop\domaine\service\auth\iAuth;
 use Psr\Http\Message\ResponseInterface as Response;
 use Psr\Http\Message\ServerRequestInterface as Request;
-use Slim\Exception\HttpBadRequestException;
 
 class PostAuthSignupAction extends Action
 {
@@ -22,19 +21,18 @@ class PostAuthSignupAction extends Action
 
     public function __invoke(Request $rq, Response $rs, array $args): Response
     {
-
-        if (!$rq->hasHeader('Authorization'))
-            throw new HttpBadRequestException($rq, 'No credentials provided');
-
         try {
             $infos = $rq->getParsedBody();
-            $email = isset($infos['email']) ? htmlspecialchars($infos['email']) : null;
-            $password = isset($infos['password']) ? htmlspecialchars($infos['password']) : null;
-            $first_name = isset($infos['first_name']) ? htmlspecialchars($infos['first_name']) : null;
-            $last_name = isset($infos['last_name']) ? htmlspecialchars($infos['last_name']) : null;
+//            $email = isset($infos['email']) ? htmlspecialchars($infos['email']) : null;
+//            $password = isset($infos['password']) ? htmlspecialchars($infos['password']) : null;
+//            $first_name = isset($infos['first_name']) ? htmlspecialchars($infos['first_name']) : null;
+//            $last_name = isset($infos['last_name']) ? htmlspecialchars($infos['last_name']) : null;
+            $email = htmlspecialchars($infos['email']);
+            $password = htmlspecialchars($infos['password']);
+            $first_name = htmlspecialchars($infos['first_name']);
+            $last_name = htmlspecialchars($infos['last_name']);
 
-            if (is_null($email) || is_null($password) || is_null($first_name) || is_null($last_name))
-                throw new HttpBadRequestException($rq, 'Invalid credentials');
+            if (empty($email) || empty($password) || empty($first_name) || empty($last_name)) return $rs->withStatus(400);
 
             $credentialsDTO = new CredentialsDTO($email, $password);
             $credentialsDTO->first_name = $first_name;
@@ -42,11 +40,10 @@ class PostAuthSignupAction extends Action
 
             $userDTO = $this->serviceAuth->signup($credentialsDTO);
 
-            $rs->getBody()->write($tokenDTO->toJson());
-
+            $rs->getBody()->write($userDTO->toJson());
             return $rs->withStatus(201);
-        } catch (AuthServiceCredentialsException $e) {
-            throw new HttpBadRequestException($rq, $e->getMessage());
+        } catch (AuthServiceCredentialsException) {
+            return $rs->withStatus(401);
         }
     }
 

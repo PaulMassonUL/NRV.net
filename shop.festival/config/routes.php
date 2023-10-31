@@ -19,7 +19,7 @@ return function (\Slim\App $app) {
 
     $JwtVerification = new Jwt($app->getContainer()->get('AuthService'));
 
-    $app->options('/{routes:.+}', function ($response) {
+    $app->options('/{routes:.+}', function ($request, $response) {
         return $response;
     });
 

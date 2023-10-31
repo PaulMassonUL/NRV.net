@@ -3,27 +3,32 @@ import festivalLoader from '../../festival_loader.js';
 class ConnexionForm {
 
     initializeEventListeners() {
-        const button = document.getElementById("button-connexion");
+        const button = document.getElementById("signin-button");
         button.addEventListener('click', () => {
-            const form = document.getElementById("card-login");
-            const email = form.querySelector("#email").value;
-            const password = form.querySelector("#password").value;
+            button.disabled = true;
+
+            const form = document.getElementById("signin-form");
+            const errorDiv = form.getElementsByClassName("error")[0];
+            const email = form.querySelector("#signin-email").value;
+            const password = form.querySelector("#signin-password").value;
 
             const options = {
                 method: 'POST',
                 headers: {
-                    'Content-Type': 'application/json',
                     'Authorization': 'Basic ' + btoa(email + ':' + password)
-                },
-                mode: 'cors'
+                }
             };
 
             festivalLoader.fetch_festival_api('/auth/signin', options)
                 .then(response => {
-                    if (response.success) {
-                        localStorage.setItem('token', response.token);
-                        window.location.href = 'accueil.html';
-                    }
+                    window.location.href = 'list_show.html';
+                    localStorage.setItem('access_token', response.access_token);
+                    localStorage.setItem('refresh_token', response.refresh_token);
+                })
+                .catch(() => {
+                    button.disabled = false;
+                    // afficher l'erreur
+                    errorDiv.innerHTML = '<p class="error">Erreur de connexion : les informations fournies ne nous on pas permis de vous authentifier</p>';
                 });
         });
     }

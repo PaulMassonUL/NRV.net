@@ -24,8 +24,7 @@ class PostAuthSigninAction extends Action
     public function __invoke(Request $rq, Response $rs, array $args): Response
     {
 
-        if (!$rq->hasHeader('Authorization'))
-            throw new HttpBadRequestException($rq, 'No credentials provided');
+        if (!$rq->hasHeader('Authorization')) return $rs->withStatus(400);
 
         try {
             $credentials = $rq->getHeader('Authorization')[0];
@@ -38,8 +37,8 @@ class PostAuthSigninAction extends Action
             $rs->getBody()->write($tokenDTO->toJson());
 
             return $rs->withStatus(201);
-        } catch (AuthServiceCredentialsException $e) {
-            throw new HttpUnauthorizedException($rq, $e->getMessage());
+        } catch (AuthServiceCredentialsException) {
+            return $rs->withStatus(401);
         }
     }
 

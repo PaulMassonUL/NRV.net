@@ -57,6 +57,8 @@ class AuthProvider implements IAuthProvider
         $user->first_name = $first_name;
         $user->last_name = $last_name;
         $user->save();
+
+        $this->authenticatedUser = $user;
     }
 
     public function activate(string $token): void

@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>Connection</title>
+    <title>Connexion</title>
     <link rel="stylesheet" href="../css/pages/connexion.css">
     <link rel="stylesheet" href="../css/components/headerFotter.css">
 </head>
@@ -22,24 +22,25 @@
 
 <main>
     <div class="container" id="container">
-        <div class="form-container sign-up">
-            <form>
+        <div id="signup-form" class="form-container sign-up">
+            <div class="form">
                 <h1>Créer un compte</h1>
-                <input type="text" placeholder="Nom de famille">
-                <input type="text" placeholder="Prénom">
-                <input type="text" placeholder="Email">
-                <input type="text" placeholder="Mot de passe">
-                <input type="text" placeholder="Confirmer mot de passe">
-                <button class="button-register">Inscrivez-vous</button>
-            </form>
+                <input id="last_name" type="text" placeholder="Nom de famille">
+                <input id="first_name" type="text" placeholder="Prénom">
+                <input id="signup-email" type="email" placeholder="Email">
+                <input id="signup-password" type="password" placeholder="Mot de passe">
+                <div class="error"></div>
+                <button id="signup-button" class="button-register">Inscrivez-vous</button>
+            </div>
         </div>
-        <div class="form-container sign-in">
-            <form>
+        <div id="signin-form" class="form-container sign-in">
+            <div class="form">
                 <h1>Se connecter</h1>
-                <input type="text" placeholder="Email">
-                <input type="text" placeholder="Mot de passe">
-                <button class="login">Connexion</button>
-            </form>
+                <input id="signin-email" type="email" placeholder="Email">
+                <input id="signin-password" type="password" placeholder="Mot de passe">
+                <div class="error"></div>
+                <button id="signin-button" class="login">Connexion</button>
+            </div>
         </div>
 
         <div class="toggle-container">

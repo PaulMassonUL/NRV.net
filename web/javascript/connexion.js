@@ -1,8 +1,10 @@
 import connexionForm from "./modules/connexion/connexion_form.js";
+import inscriptionForm from "./modules/connexion/inscription_form.js";
 
 document.addEventListener('DOMContentLoaded', () => {
 
     connexionForm.initializeEventListeners();
+    inscriptionForm.initializeEventListeners();
 
 });
 
@@ -16,6 +18,5 @@ registerBtn.addEventListener('click', () => {
 });
 
 loginBtn.addEventListener('click', () => {
-    console.log("login");
     container.classList.remove("active");
 });
