@@ -2,17 +2,24 @@ import festivalLoader from '../../festival_loader.js';
 
 class Compte {
 
-    getUser(token) {
+    getUser() {
         const options = {
-            method: 'POST',
+            method: 'GET',
             headers: {
-                'Authorization': 'Bearer ' + token
+                'Authorization': 'Bearer ' + localStorage.getItem("access_token")
             }
         };
 
-        festivalLoader.fetch_festival_api('', options)
+        festivalLoader.fetch_festival_api('/user/', options)
             .then(response => {
                 // récuperer les informations de l'utilisateur
+                console.log(response);
+                const firstname = document.getElementById("firstname");
+                const lastname = document.getElementById("lastname");
+                const email = document.getElementById("email");
+                lastname.textContent = "Nom : " + response.last_name;
+                firstname.textContent = "Prénom : " + response.first_name;
+                email.textContent = "Adresse email : " + response.email;
             })
             .catch(() => {
                 // si le token est invalide, envoyer le refresh token pour en avoir un nouveau
