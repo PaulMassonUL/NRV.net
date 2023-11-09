@@ -60,3 +60,11 @@ services:
       - festival-shop.net
     volumes:
       - ../shop.festival/sql:/var/sql
+
+  httpd:
+    image: nginx:latest
+    volumes:
+      - ./web:/usr/share/nginx/html
+    ports:
+      - "11114:80"
+  
